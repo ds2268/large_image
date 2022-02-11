@@ -88,7 +88,7 @@ function setFrameQuad(tileinfo, layer, options) {
     while (texSize ** 2 > maxTotalPixels) {
         texSize /= 2;
     }
-    while (textures && texSize ** 2 * textures > maxTotalPixels) {
+    while (textures > 1 && texSize ** 2 * textures > maxTotalPixels) {
         textures -= 1;
     }
     let fw, fh, fhorz, fvert, fperframe;

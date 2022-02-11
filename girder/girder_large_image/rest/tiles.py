@@ -106,6 +106,7 @@ class TilesItemResource(ItemResource):
         apiRoot.item.route('GET', (':itemId', 'tiles', 'thumbnail'), self.getTilesThumbnail)
         apiRoot.item.route('GET', (':itemId', 'tiles', 'region'), self.getTilesRegion)
         apiRoot.item.route('GET', (':itemId', 'tiles', 'tile_frames'), self.tileFrames)
+        apiRoot.item.route('GET', (':itemId', 'tiles', 'tile_frames', 'quad_info'), self.tileFramesQuadInfo)
         apiRoot.item.route('GET', (':itemId', 'tiles', 'pixel'), self.getTilesPixel)
         apiRoot.item.route('GET', (':itemId', 'tiles', 'histogram'), self.getHistogram)
         apiRoot.item.route('GET', (':itemId', 'tiles', 'bands'), self.getBandInformation)
@@ -1244,3 +1245,18 @@ class TilesItemResource(ItemResource):
             return stream
         setRawResponse()
         return regionData
+
+    @describeRoute(
+        Description('Get any region of a large image item, optionally scaling '
+                    'it.')
+        .param('itemId', 'The ID of the item.', paramType='path')
+
+        .errorResponse('ID was invalid.')
+        .errorResponse('Read access was denied for the item.', 403)
+    )
+    @access.public(cookie=True)
+    @loadmodel(model='item', map={'itemId': 'item'}, level=AccessType.READ)
+    def tileFramesQuadInfo(self, item, params):
+        metadata = self.imageItemModel.getMetadata(item)
+        options = {}
+        return large_image.tilesource.utilities.getTileFramesQuadInfo(metadata, options)
