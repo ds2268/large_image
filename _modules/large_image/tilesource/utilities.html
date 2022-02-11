@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>large_image.tilesource.utilities &mdash; large_image  documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> large_image
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tilesource_options.html">Tile Source Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../config_options.html">Configuration Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../image_conversion.html">Image Conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrade.html">Upgrading from Previous Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image/modules.html">large_image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_bioformats/modules.html">large_image_source_bioformats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_deepzoom/modules.html">large_image_source_deepzoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_dummy/modules.html">large_image_source_dummy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_gdal/modules.html">large_image_source_gdal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_mapnik/modules.html">large_image_source_mapnik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_multi/modules.html">large_image_source_multi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../multi_source_specification.html">Multi Source Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_nd2/modules.html">large_image_source_nd2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_ometiff/modules.html">large_image_source_ometiff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_openjpeg/modules.html">large_image_source_openjpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_openslide/modules.html">large_image_source_openslide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_pil/modules.html">large_image_source_pil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_test/modules.html">large_image_source_test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_source_tiff/modules.html">large_image_source_tiff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_converter/modules.html">large_image_converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/large_image_tasks/modules.html">large_image_tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/girder_large_image/modules.html">girder_large_image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_build/girder_large_image_annotation/modules.html">girder_large_image_annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../annotations.html">Annotation Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development.html">Developer Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">large_image</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+          <li><a href="../tilesource.html">large_image.tilesource</a> &raquo;</li>
+      <li>large_image.tilesource.utilities</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for large_image.tilesource.utilities</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">types</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">attrgetter</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">PIL</span>
+<span class="kn">import</span> <span class="nn">PIL.Image</span>
+<span class="kn">import</span> <span class="nn">PIL.ImageColor</span>
+<span class="kn">import</span> <span class="nn">PIL.ImageDraw</span>
+
+<span class="kn">from</span> <span class="nn">..constants</span> <span class="kn">import</span> <span class="p">(</span><span class="n">TILE_FORMAT_IMAGE</span><span class="p">,</span> <span class="n">TILE_FORMAT_NUMPY</span><span class="p">,</span> <span class="n">TILE_FORMAT_PIL</span><span class="p">,</span>
+                         <span class="n">TileOutputMimeTypes</span><span class="p">,</span> <span class="n">TileOutputPILFormat</span><span class="p">)</span>
+
+<span class="c1"># Turn off decompression warning check</span>
+<span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">MAX_IMAGE_PIXELS</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">_encodeImage</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;JPEG&#39;</span><span class="p">,</span> <span class="n">jpegQuality</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span> <span class="n">jpegSubsampling</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="nb">format</span><span class="o">=</span><span class="p">(</span><span class="n">TILE_FORMAT_IMAGE</span><span class="p">,</span> <span class="p">),</span> <span class="n">tiffCompression</span><span class="o">=</span><span class="s1">&#39;raw&#39;</span><span class="p">,</span>
+                 <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert a PIL or numpy image into raw output bytes and a mime type.</span>
+
+<span class="sd">    :param image: a PIL image.</span>
+<span class="sd">    :param encoding: a valid PIL encoding (typically &#39;PNG&#39; or &#39;JPEG&#39;).  Must</span>
+<span class="sd">        also be in the TileOutputMimeTypes map.</span>
+<span class="sd">    :param jpegQuality: the quality to use when encoding a JPEG.</span>
+<span class="sd">    :param jpegSubsampling: the subsampling level to use when encoding a JPEG.</span>
+<span class="sd">    :param format: the desired format or a tuple of allowed formats.  Formats</span>
+<span class="sd">        are members of (TILE_FORMAT_PIL, TILE_FORMAT_NUMPY, TILE_FORMAT_IMAGE).</span>
+<span class="sd">    :param tiffCompression: the compression format to use when encoding a TIFF.</span>
+<span class="sd">    :returns:</span>
+<span class="sd">        :imageData: the image data in the specified format and encoding.</span>
+<span class="sd">        :imageFormatOrMimeType: the image mime type if the format is</span>
+<span class="sd">            TILE_FORMAT_IMAGE, or the format of the image data if it is</span>
+<span class="sd">            anything else.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">format</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">set</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+        <span class="nb">format</span> <span class="o">=</span> <span class="p">(</span><span class="nb">format</span><span class="p">,</span> <span class="p">)</span>
+    <span class="n">imageData</span> <span class="o">=</span> <span class="n">image</span>
+    <span class="n">imageFormatOrMimeType</span> <span class="o">=</span> <span class="n">TILE_FORMAT_PIL</span>
+    <span class="k">if</span> <span class="n">TILE_FORMAT_NUMPY</span> <span class="ow">in</span> <span class="nb">format</span><span class="p">:</span>
+        <span class="n">imageData</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_imageToNumpy</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">imageFormatOrMimeType</span> <span class="o">=</span> <span class="n">TILE_FORMAT_NUMPY</span>
+    <span class="k">elif</span> <span class="n">TILE_FORMAT_PIL</span> <span class="ow">in</span> <span class="nb">format</span><span class="p">:</span>
+        <span class="n">imageData</span> <span class="o">=</span> <span class="n">_imageToPIL</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">imageFormatOrMimeType</span> <span class="o">=</span> <span class="n">TILE_FORMAT_PIL</span>
+    <span class="k">elif</span> <span class="n">TILE_FORMAT_IMAGE</span> <span class="ow">in</span> <span class="nb">format</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">encoding</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">TileOutputMimeTypes</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid encoding &quot;</span><span class="si">%s</span><span class="s1">&quot;&#39;</span> <span class="o">%</span> <span class="n">encoding</span><span class="p">)</span>
+        <span class="n">imageFormatOrMimeType</span> <span class="o">=</span> <span class="n">TileOutputMimeTypes</span><span class="p">[</span><span class="n">encoding</span><span class="p">]</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">_imageToPIL</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">width</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">image</span><span class="o">.</span><span class="n">height</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">imageData</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">encoding</span> <span class="o">=</span> <span class="n">TileOutputPILFormat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">encoding</span><span class="p">,</span> <span class="n">encoding</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span>
+            <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">if</span> <span class="n">encoding</span> <span class="o">==</span> <span class="s1">&#39;JPEG&#39;</span> <span class="ow">and</span> <span class="n">image</span><span class="o">.</span><span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;RGB&#39;</span><span class="p">):</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGB&#39;</span> <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">mode</span> <span class="o">!=</span> <span class="s1">&#39;LA&#39;</span> <span class="k">else</span> <span class="s1">&#39;L&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">encoding</span> <span class="o">==</span> <span class="s1">&#39;JPEG&#39;</span><span class="p">:</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">jpegQuality</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;subsampling&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">jpegSubsampling</span>
+            <span class="k">elif</span> <span class="n">encoding</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;TIFF&#39;</span><span class="p">,</span> <span class="s1">&#39;TILED&#39;</span><span class="p">}:</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;compression&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;none&#39;</span><span class="p">:</span> <span class="s1">&#39;raw&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;lzw&#39;</span><span class="p">:</span> <span class="s1">&#39;tiff_lzw&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;deflate&#39;</span><span class="p">:</span> <span class="s1">&#39;tiff_adobe_deflate&#39;</span><span class="p">,</span>
+                <span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tiffCompression</span><span class="p">,</span> <span class="n">tiffCompression</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">encoding</span> <span class="o">==</span> <span class="s1">&#39;PNG&#39;</span><span class="p">:</span>
+                <span class="n">params</span><span class="p">[</span><span class="s1">&#39;compress_level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">encoding</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+            <span class="n">imageData</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">imageData</span><span class="p">,</span> <span class="n">imageFormatOrMimeType</span>
+
+
+<span class="k">def</span> <span class="nf">_imageToPIL</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">setMode</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert an image in PIL, numpy, or image file format to a PIL image.</span>
+
+<span class="sd">    :param image: input image.</span>
+<span class="sd">    :param setMode: if specified, the output image is converted to this mode.</span>
+<span class="sd">    :returns: a PIL image.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;L&#39;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="c1"># Fallback for hyperspectral data to just use the first three bands</span>
+            <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+            <span class="n">mode</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;LA&#39;</span><span class="p">,</span> <span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="s1">&#39;RGBA&#39;</span><span class="p">][</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">numpy</span><span class="o">.</span><span class="n">uint16</span><span class="p">:</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">floor_divide</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="c1"># TODO: The scaling of float data needs to be identical across all</span>
+        <span class="c1"># tiles of an image.  This means that we need a reference to the parent</span>
+        <span class="c1"># tile source or some other way of regulating it.</span>
+        <span class="c1"># elif image.dtype.kind == &#39;f&#39;:</span>
+        <span class="c1">#     if numpy.max(image) &gt; 1:</span>
+        <span class="c1">#         maxl2 = math.ceil(math.log(numpy.max(image) + 1) / math.log(2))</span>
+        <span class="c1">#         image = image / ((2 ** maxl2) - 1)</span>
+        <span class="c1">#     image = (image * 255).astype(numpy.uint8)</span>
+        <span class="k">elif</span> <span class="n">image</span><span class="o">.</span><span class="n">dtype</span> <span class="o">!=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">uint8</span><span class="p">:</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">image</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">setMode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">image</span><span class="o">.</span><span class="n">mode</span> <span class="o">!=</span> <span class="n">setMode</span><span class="p">:</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">setMode</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">image</span>
+
+
+<span class="k">def</span> <span class="nf">_imageToNumpy</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert an image in PIL, numpy, or image file format to a numpy array.  The</span>
+<span class="sd">    output numpy array always has three dimensions.</span>
+
+<span class="sd">    :param image: input image.</span>
+<span class="sd">    :returns: a numpy array and a target PIL image mode.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">image</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;LA&#39;</span><span class="p">,</span> <span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="s1">&#39;RGBA&#39;</span><span class="p">):</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s1">&#39;RGBA&#39;</span><span class="p">)</span>
+        <span class="n">mode</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">mode</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">mode</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;LA&#39;</span><span class="p">,</span> <span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="s1">&#39;RGBA&#39;</span><span class="p">][(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">4</span> <span class="k">else</span> <span class="mi">3</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;L&#39;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">image</span><span class="p">,</span> <span class="n">mode</span>
+
+
+<span class="k">def</span> <span class="nf">_letterboxImage</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">fill</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given a PIL image, width, height, and fill color, letterbox or pillarbox</span>
+<span class="sd">    the image to make it the specified dimensions.  The image is never</span>
+<span class="sd">    cropped.  The original image will be returned if no action is needed.</span>
+
+<span class="sd">    :param image: the source image.</span>
+<span class="sd">    :param width: the desired width in pixels.</span>
+<span class="sd">    :param height: the desired height in pixels.</span>
+<span class="sd">    :param fill: a fill color.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">image</span><span class="o">.</span><span class="n">width</span> <span class="o">&gt;=</span> <span class="n">width</span> <span class="ow">and</span> <span class="n">image</span><span class="o">.</span><span class="n">height</span> <span class="o">&gt;=</span> <span class="n">height</span><span class="p">)</span> <span class="ow">or</span>
+            <span class="ow">not</span> <span class="n">fill</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">fill</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;none&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">image</span>
+    <span class="n">corner</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">fill</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;corner:&#39;</span><span class="p">):</span>
+        <span class="n">corner</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">fill</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">PIL</span><span class="o">.</span><span class="n">ImageColor</span><span class="o">.</span><span class="n">getcolor</span><span class="p">(</span><span class="n">fill</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="n">color</span><span class="p">)</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span>
+        <span class="nb">int</span><span class="p">((</span><span class="n">width</span> <span class="o">-</span> <span class="n">image</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">corner</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nb">int</span><span class="p">((</span><span class="n">height</span> <span class="o">-</span> <span class="n">image</span><span class="o">.</span><span class="n">height</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">corner</span> <span class="k">else</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<span class="k">def</span> <span class="nf">_vipsCast</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">mustBe8Bit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">originalScale</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cast a vips image to a format we want.</span>
+
+<span class="sd">    :param image: a vips image</span>
+<span class="sd">    :param mustBe9Bit: if True, then always cast to unsigned 8-bit.</span>
+<span class="sd">    :param originalScale:</span>
+<span class="sd">    :returns: a vips image</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">pyvips</span>
+
+    <span class="n">formats</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">CHAR</span><span class="p">:</span> <span class="p">(</span><span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">UCHAR</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">COMPLEX</span><span class="p">:</span> <span class="p">(</span><span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">USHORT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">65535</span><span class="p">),</span>
+        <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">:</span> <span class="p">(</span><span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">USHORT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">65535</span><span class="p">),</span>
+        <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">DPCOMPLEX</span><span class="p">:</span> <span class="p">(</span><span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">USHORT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">65535</span><span class="p">),</span>
+        <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">FLOAT</span><span class="p">:</span> <span class="p">(</span><span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">USHORT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">65535</span><span class="p">),</span>
+        <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">INT</span><span class="p">:</span> <span class="p">(</span><span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">USHORT</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">31</span><span class="p">,</span> <span class="mi">2</span><span class="o">**-</span><span class="mi">16</span><span class="p">),</span>
+        <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">USHORT</span><span class="p">:</span> <span class="p">(</span><span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">UCHAR</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">**-</span><span class="mi">8</span><span class="p">),</span>
+        <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">SHORT</span><span class="p">:</span> <span class="p">(</span><span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">USHORT</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">UINT</span><span class="p">:</span> <span class="p">(</span><span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">USHORT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">**-</span><span class="mi">16</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">format</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">formats</span> <span class="ow">or</span> <span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">USHORT</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">mustBe8Bit</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">image</span>
+    <span class="n">target</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">multiplier</span> <span class="o">=</span> <span class="n">formats</span><span class="p">[</span><span class="n">image</span><span class="o">.</span><span class="n">format</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">format</span> <span class="o">==</span> <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">:</span>
+        <span class="n">maxVal</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="c1"># These thresholds are higher than 256 and 65536 because bicubic and</span>
+        <span class="c1"># other interpolations can cause value spikes</span>
+        <span class="k">if</span> <span class="n">maxVal</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">maxVal</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">**</span><span class="mi">9</span><span class="p">:</span>
+            <span class="n">multiplier</span> <span class="o">=</span> <span class="mi">256</span>
+        <span class="k">elif</span> <span class="n">maxVal</span> <span class="o">&gt;=</span> <span class="mi">256</span> <span class="ow">and</span> <span class="n">maxVal</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">**</span><span class="mi">17</span><span class="p">:</span>
+            <span class="n">multiplier</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">mustBe8Bit</span> <span class="ow">and</span> <span class="n">target</span> <span class="o">!=</span> <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">UCHAR</span><span class="p">:</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">UCHAR</span>
+        <span class="n">multiplier</span> <span class="o">/=</span> <span class="mi">256</span>
+    <span class="c1"># logger.debug(&#39;Casting image from %r to %r&#39;, image.format, target)</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="p">((</span><span class="n">image</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">pyvips</span><span class="o">.</span><span class="n">BandFormat</span><span class="o">.</span><span class="n">DOUBLE</span><span class="p">)</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span> <span class="o">*</span> <span class="n">multiplier</span><span class="p">)</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">image</span>
+
+
+<span class="k">def</span> <span class="nf">_gdalParameters</span><span class="p">(</span><span class="n">defaultCompression</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eightbit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return an array of gdal translation parameters.</span>
+
+<span class="sd">    :param defaultCompression: if not specified, use this value.</span>
+<span class="sd">    :param eightbit: True or False to indicate that the bit depth per sample is</span>
+<span class="sd">        known.  None for unknown.</span>
+
+<span class="sd">    Optional parameters that can be specified in kwargs:</span>
+
+<span class="sd">    :param tileSize: the horizontal and vertical tile size.</span>
+<span class="sd">    :param compression: one of &#39;jpeg&#39;, &#39;deflate&#39; (zip), &#39;lzw&#39;, &#39;packbits&#39;,</span>
+<span class="sd">        &#39;zstd&#39;, or &#39;none&#39;.</span>
+<span class="sd">    :param quality: a jpeg quality passed to gdal.  0 is small, 100 is high</span>
+<span class="sd">        quality.  90 or above is recommended.</span>
+<span class="sd">    :param level: compression level for zstd, 1-22 (default is 10).</span>
+<span class="sd">    :param predictor: one of &#39;none&#39;, &#39;horizontal&#39;, or &#39;float&#39; used for lzw and</span>
+<span class="sd">        deflate.</span>
+<span class="sd">    :returns: a dictionary of parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;tileSize&#39;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span>
+        <span class="s1">&#39;compression&#39;</span><span class="p">:</span> <span class="s1">&#39;lzw&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;quality&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">eightbit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">options</span><span class="p">[</span><span class="s1">&#39;predictor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;yes&#39;</span> <span class="k">if</span> <span class="n">eightbit</span> <span class="k">else</span> <span class="s1">&#39;none&#39;</span>
+    <span class="n">predictor</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;none&#39;</span><span class="p">:</span> <span class="s1">&#39;NO&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;horizontal&#39;</span><span class="p">:</span> <span class="s1">&#39;STANDARD&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;float&#39;</span><span class="p">:</span> <span class="s1">&#39;FLOATING_POINT&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;yes&#39;</span><span class="p">:</span> <span class="s1">&#39;YES&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">options</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)})</span>
+    <span class="n">cmdopt</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;-of&#39;</span><span class="p">,</span> <span class="s1">&#39;COG&#39;</span><span class="p">,</span> <span class="s1">&#39;-co&#39;</span><span class="p">,</span> <span class="s1">&#39;BIGTIFF=IF_SAFER&#39;</span><span class="p">]</span>
+    <span class="n">cmdopt</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;-co&#39;</span><span class="p">,</span> <span class="s1">&#39;BLOCKSIZE=</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;tileSize&#39;</span><span class="p">]]</span>
+    <span class="n">cmdopt</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;-co&#39;</span><span class="p">,</span> <span class="s1">&#39;COMPRESS=</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;compression&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()]</span>
+    <span class="n">cmdopt</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;-co&#39;</span><span class="p">,</span> <span class="s1">&#39;QUALITY=</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="s1">&#39;predictor&#39;</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
+        <span class="n">cmdopt</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;-co&#39;</span><span class="p">,</span> <span class="s1">&#39;PREDICTOR=</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">predictor</span><span class="p">[</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;predictor&#39;</span><span class="p">]]]</span>
+    <span class="k">if</span> <span class="s1">&#39;level&#39;</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
+        <span class="n">cmdopt</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;-co&#39;</span><span class="p">,</span> <span class="s1">&#39;LEVEL=</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">options</span><span class="p">[</span><span class="s1">&#39;level&#39;</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">cmdopt</span>
+
+
+<span class="k">def</span> <span class="nf">_vipsParameters</span><span class="p">(</span><span class="n">forTiled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">defaultCompression</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a dictionary of vips conversion parameters.</span>
+
+<span class="sd">    :param forTiled: True if this is for a tiled image.  False for an</span>
+<span class="sd">        associated image.</span>
+<span class="sd">    :param defaultCompression: if not specified, use this value.</span>
+
+<span class="sd">    Optional parameters that can be specified in kwargs:</span>
+
+<span class="sd">    :param tileSize: the horizontal and vertical tile size.</span>
+<span class="sd">    :param compression: one of &#39;jpeg&#39;, &#39;deflate&#39; (zip), &#39;lzw&#39;, &#39;packbits&#39;,</span>
+<span class="sd">        &#39;zstd&#39;, or &#39;none&#39;.</span>
+<span class="sd">    :param quality: a jpeg quality passed to vips.  0 is small, 100 is high</span>
+<span class="sd">        quality.  90 or above is recommended.</span>
+<span class="sd">    :param level: compression level for zstd, 1-22 (default is 10).</span>
+<span class="sd">    :param predictor: one of &#39;none&#39;, &#39;horizontal&#39;, or &#39;float&#39; used for lzw and</span>
+<span class="sd">        deflate.</span>
+<span class="sd">    :param shrinkMode: one of vips&#39;s VipsRegionShrink strings.</span>
+<span class="sd">    :returns: a dictionary of parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">forTiled</span><span class="p">:</span>
+        <span class="n">convertParams</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;compression&#39;</span><span class="p">:</span> <span class="n">defaultCompression</span> <span class="ow">or</span> <span class="s1">&#39;jpeg&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Q&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+            <span class="s1">&#39;predictor&#39;</span><span class="p">:</span> <span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;tile&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="s1">&#39;mime&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;mime&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">&#39;image/jpeg&#39;</span><span class="p">:</span>
+            <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;compression&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;lzw&#39;</span>
+        <span class="k">return</span> <span class="n">convertParams</span>
+    <span class="n">convertParams</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;tile&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;tile_width&#39;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span>
+        <span class="s1">&#39;tile_height&#39;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span>
+        <span class="s1">&#39;pyramid&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;bigtiff&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;compression&#39;</span><span class="p">:</span> <span class="n">defaultCompression</span> <span class="ow">or</span> <span class="s1">&#39;jpeg&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Q&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+        <span class="s1">&#39;predictor&#39;</span><span class="p">:</span> <span class="s1">&#39;horizontal&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="c1"># For lossless modes, make sure pixel values in lower resolutions are</span>
+    <span class="c1"># values that exist in the upper resolutions.</span>
+    <span class="k">if</span> <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;compression&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="s1">&#39;lzw&#39;</span><span class="p">}:</span>
+        <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;region_shrink&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;nearest&#39;</span>
+    <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;shrinkMode&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;shrinkMode&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;default&#39;</span><span class="p">:</span>
+        <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;region_shrink&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;shrinkMode&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">vkey</span><span class="p">,</span> <span class="n">kwkeys</span> <span class="ow">in</span> <span class="p">{</span>
+        <span class="s1">&#39;tile_width&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;tileSize&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;tile_height&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;tileSize&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;compression&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;compression&#39;</span><span class="p">,</span> <span class="s1">&#39;tiffCompression&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;Q&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;quality&#39;</span><span class="p">,</span> <span class="s1">&#39;jpegQuality&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;level&#39;</span><span class="p">},</span>
+        <span class="s1">&#39;predictor&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;predictor&#39;</span><span class="p">},</span>
+    <span class="p">}</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">kwkey</span> <span class="ow">in</span> <span class="n">kwkeys</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kwkey</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">kwkey</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">}:</span>
+                <span class="n">convertParams</span><span class="p">[</span><span class="n">vkey</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">kwkey</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;compression&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;jp2k&#39;</span><span class="p">:</span>
+        <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;compression&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span>
+    <span class="k">if</span> <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;compression&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;webp&#39;</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;quality&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;lossless&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">convertParams</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;predictor&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+        <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;predictor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;horizontal&#39;</span>
+    <span class="k">if</span> <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;compression&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;jpeg&#39;</span><span class="p">:</span>
+        <span class="n">convertParams</span><span class="p">[</span><span class="s1">&#39;rgbjpeg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">convertParams</span>
+
+
+<div class="viewcode-block" id="etreeToDict"><a class="viewcode-back" href="../../../_build/large_image/large_image.tilesource.html#large_image.tilesource.utilities.etreeToDict">[docs]</a><span class="k">def</span> <span class="nf">etreeToDict</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert an xml etree to a nested dictionary without schema names in the</span>
+<span class="sd">    keys.  If you have an xml string, this can be converted to a dictionary via</span>
+<span class="sd">    xml.etree.etreeToDict(ElementTree.fromstring(xml_string)).</span>
+
+<span class="sd">    :param t: an etree.</span>
+<span class="sd">    :returns: a python dictionary with the results.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Remove schema</span>
+    <span class="n">tag</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;}&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;{&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="n">t</span><span class="o">.</span><span class="n">tag</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">tag</span><span class="p">:</span> <span class="p">{}}</span>
+    <span class="n">children</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">children</span><span class="p">:</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="n">etreeToDict</span><span class="p">,</span> <span class="n">children</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">entry</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">entries</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">tag</span><span class="p">:</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">v</span>
+                   <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">entries</span><span class="o">.</span><span class="n">items</span><span class="p">()}}</span>
+
+    <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">attrib</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({(</span><span class="n">k</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;}&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;{&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="n">k</span><span class="p">):</span> <span class="n">v</span>
+                       <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">attrib</span><span class="o">.</span><span class="n">items</span><span class="p">()})</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">text</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">text</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">tag</span><span class="p">]):</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">tag</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span>
+    <span class="k">elif</span> <span class="n">text</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">text</span>
+    <span class="k">return</span> <span class="n">d</span></div>
+
+
+<div class="viewcode-block" id="dictToEtree"><a class="viewcode-back" href="../../../_build/large_image/large_image.tilesource.html#large_image.tilesource.utilities.dictToEtree">[docs]</a><span class="k">def</span> <span class="nf">dictToEtree</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert a dictionary in the style produced by etreeToDict back to an etree.</span>
+<span class="sd">    Make an xml string via xml.etree.ElementTree.tostring(dictToEtree(</span>
+<span class="sd">    dictionary), encoding=&#39;utf8&#39;, method=&#39;xml&#39;).  Note that this function and</span>
+<span class="sd">    etreeToDict are not perfect conversions; numerical values are quoted in</span>
+<span class="sd">    xml.  Plain key-value pairs are ambiguous whether they should be attributes</span>
+<span class="sd">    or text values.  Text fields are collected together.</span>
+
+<span class="sd">    :param d: a dictionary.</span>
+<span class="sd">    :prarm root: the root node to attach this dictionary to.</span>
+<span class="sd">    :returns: an etree.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">xml</span><span class="o">.</span><span class="n">etree</span><span class="o">.</span><span class="n">ElementTree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+            <span class="n">dictToEtree</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">root</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">xml</span><span class="o">.</span><span class="n">etree</span><span class="o">.</span><span class="n">ElementTree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                <span class="n">elem</span> <span class="o">=</span> <span class="n">xml</span><span class="o">.</span><span class="n">etree</span><span class="o">.</span><span class="n">ElementTree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+                <span class="n">dictToEtree</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">elem</span> <span class="o">=</span> <span class="n">xml</span><span class="o">.</span><span class="n">etree</span><span class="o">.</span><span class="n">ElementTree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <span class="n">dictToEtree</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">elem</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="s1">&#39;text&#39;</span><span class="p">:</span>
+                <span class="n">root</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">v</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">root</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">root</span></div>
+
+
+<div class="viewcode-block" id="nearPowerOfTwo"><a class="viewcode-back" href="../../../_build/large_image/large_image.tilesource.html#large_image.tilesource.utilities.nearPowerOfTwo">[docs]</a><span class="k">def</span> <span class="nf">nearPowerOfTwo</span><span class="p">(</span><span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.02</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if two values are different by nearly a power of two.</span>
+
+<span class="sd">    :param val1: the first value to check.</span>
+<span class="sd">    :param val2: the second value to check.</span>
+<span class="sd">    :param tolerance: the maximum difference in the log2 ratio&#39;s mantissa.</span>
+<span class="sd">    :return: True if the valeus are nearly a power of two different from each</span>
+<span class="sd">        other; false otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># If one or more of the values is zero or they have different signs, then</span>
+    <span class="c1"># return False</span>
+    <span class="k">if</span> <span class="n">val1</span> <span class="o">*</span> <span class="n">val2</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">log2ratio</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">val1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">val2</span><span class="p">))</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># Compare the mantissa of the ratio&#39;s log2 value.</span>
+    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">log2ratio</span> <span class="o">-</span> <span class="nb">round</span><span class="p">(</span><span class="n">log2ratio</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">tolerance</span></div>
+
+
+<span class="k">def</span> <span class="nf">_arrayToPalette</span><span class="p">(</span><span class="n">palette</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given an array of color strings, tuples, or lists, return a numpy array.</span>
+
+<span class="sd">    :param palette: an array of color strings, tuples, or lists.</span>
+<span class="sd">    :returns: a numpy array of RGBA value on the scale of [0-255].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">clr</span> <span class="ow">in</span> <span class="n">palette</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">clr</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+            <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="nb">list</span><span class="p">(</span><span class="n">clr</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])[:</span><span class="mi">4</span><span class="p">])</span> <span class="o">*</span> <span class="mi">255</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PIL</span><span class="o">.</span><span class="n">ImageColor</span><span class="o">.</span><span class="n">getcolor</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">clr</span><span class="p">),</span> <span class="s1">&#39;RGBA&#39;</span><span class="p">))</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="kn">import</span> <span class="nn">matplotlib</span>
+
+                    <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PIL</span><span class="o">.</span><span class="n">ImageColor</span><span class="o">.</span><span class="n">getcolor</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">to_hex</span><span class="p">(</span><span class="n">clr</span><span class="p">),</span> <span class="s1">&#39;RGBA&#39;</span><span class="p">))</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;cannot be used as a color palette: </span><span class="si">%r</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">palette</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="getPaletteColors"><a class="viewcode-back" href="../../../_build/large_image/large_image.tilesource.html#large_image.tilesource.utilities.getPaletteColors">[docs]</a><span class="k">def</span> <span class="nf">getPaletteColors</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given a list or a name, return a list of colors in the form of a numpy</span>
+<span class="sd">    array of RGBA.  If a list, each entry is a color name resolvable by either</span>
+<span class="sd">    PIL.ImageColor.getcolor, by matplotlib.colors, or a 3 or 4 element list or</span>
+<span class="sd">    tuple of RGB(A) values on a scale of 0-1.  If this is NOT a list, then, if</span>
+<span class="sd">    it can be parsed as a color, it is treated as [&#39;#000&#39;, &lt;value&gt;].  If that</span>
+<span class="sd">    cannot be parsed, then it is assumed to be a named palette in palettable</span>
+<span class="sd">    (such as viridis.Viridis_12) or a named palette in matplotlib (including</span>
+<span class="sd">    plugins).</span>
+
+<span class="sd">    :param value: Either a list, a single color name, or a palette name.  See</span>
+<span class="sd">        above.</span>
+<span class="sd">    :returns: a numpy array of RGBA value on the scale of [0-255].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">palettable</span>
+
+    <span class="n">palette</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+        <span class="n">palette</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="k">if</span> <span class="n">palette</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">PIL</span><span class="o">.</span><span class="n">ImageColor</span><span class="o">.</span><span class="n">getcolor</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="s1">&#39;RGBA&#39;</span><span class="p">)</span>
+            <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#000&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)]</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">palette</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">palette</span> <span class="o">=</span> <span class="n">attrgetter</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))(</span><span class="n">palettable</span><span class="p">)</span><span class="o">.</span><span class="n">hex_colors</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">palette</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">matplotlib</span>
+
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">get_named_colors_mapping</span><span class="p">():</span>
+                <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#0000&#39;</span><span class="p">,</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">to_hex</span><span class="p">(</span><span class="n">value</span><span class="p">)]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">cmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">to_hex</span><span class="p">(</span><span class="n">cmap</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cmap</span><span class="o">.</span><span class="n">N</span><span class="p">)]</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
+            <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">palette</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;cannot be used as a color palette.: </span><span class="si">%r</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_arrayToPalette</span><span class="p">(</span><span class="n">palette</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="isValidPalette"><a class="viewcode-back" href="../../../_build/large_image/large_image.tilesource.html#large_image.tilesource.utilities.isValidPalette">[docs]</a><span class="k">def</span> <span class="nf">isValidPalette</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check if a value can be used as a palette.</span>
+
+<span class="sd">    :param value: Either a list, a single color name, or a palette name.  See</span>
+<span class="sd">        getPaletteColors.</span>
+<span class="sd">    :returns: a boolean; true if the value can be used as a palette.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">getPaletteColors</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<span class="k">def</span> <span class="nf">_recursePalettablePalettes</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">palettes</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Walk the modules in palettable to find all of the available palettes.</span>
+
+<span class="sd">    :param module: the current module.</span>
+<span class="sd">    :param palettes: a set to add palette names to.</span>
+<span class="sd">    :param root: a string of the parent modules.  None for palettable itself.</span>
+<span class="sd">    :param depth: the depth of the walk.  Used to avoid needless recursion.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">):</span>
+            <span class="n">attr</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">)</span> <span class="ow">and</span> <span class="n">depth</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">_recursePalettablePalettes</span><span class="p">(</span>
+                    <span class="n">attr</span><span class="p">,</span> <span class="n">palettes</span><span class="p">,</span> <span class="n">root</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">key</span> <span class="k">if</span> <span class="n">root</span> <span class="k">else</span> <span class="n">key</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">root</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="s1">&#39;hex_colors&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">palettes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">root</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="getAvailableNamedPalettes"><a class="viewcode-back" href="../../../_build/large_image/large_image.tilesource.html#large_image.tilesource.utilities.getAvailableNamedPalettes">[docs]</a><span class="k">def</span> <span class="nf">getAvailableNamedPalettes</span><span class="p">(</span><span class="n">includeColors</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">reduced</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get a list of all named palettes that can be used with getPaletteColors.</span>
+
+<span class="sd">    :param includeColors: if True, include named colors.  If False, only</span>
+<span class="sd">        include actual palettes.</span>
+<span class="sd">    :param reduced: if True, exclude reversed palettes and palettes with</span>
+<span class="sd">        fewer colors where a palette with the same basic name exists with more</span>
+<span class="sd">        colors.</span>
+<span class="sd">    :returns: a list of names.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">palettable</span>
+
+    <span class="n">palettes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">includeColors</span><span class="p">:</span>
+        <span class="n">palettes</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="n">PIL</span><span class="o">.</span><span class="n">ImageColor</span><span class="o">.</span><span class="n">colormap</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">_recursePalettablePalettes</span><span class="p">(</span><span class="n">palettable</span><span class="p">,</span> <span class="n">palettes</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">matplotlib</span>
+
+        <span class="k">if</span> <span class="n">includeColors</span><span class="p">:</span>
+            <span class="n">palettes</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">get_named_colors_mapping</span><span class="p">())</span>
+        <span class="c1"># matplotlib has made the colormap list more public in recent versions</span>
+        <span class="n">mplcm</span> <span class="o">=</span> <span class="p">(</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colormaps</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">matplotlib</span><span class="p">,</span> <span class="s1">&#39;colormaps&#39;</span><span class="p">)</span>
+                 <span class="k">else</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">_cmap_registry</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">mplcm</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">isValidPalette</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">palettes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">if</span> <span class="n">reduced</span><span class="p">:</span>
+        <span class="n">palettes</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">palettes</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;_r&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
+                <span class="s1">&#39;_&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">key</span> <span class="ow">or</span>
+                <span class="ow">not</span> <span class="n">key</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">or</span>
+                <span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span>
+                    <span class="n">key</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">palettes</span><span class="p">)}</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">palettes</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_makeSameChannelDepth</span><span class="p">(</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given two numpy arrays that are either two or three dimensions, make the</span>
+<span class="sd">    third dimension the same for both of them.  Specifically, if they are two</span>
+<span class="sd">    dimensions, first convert to trhee dimensions with a single final value.</span>
+<span class="sd">    Otherwise, the dimensions are assumed to be channels of L, LA, RGB, RGBA,</span>
+<span class="sd">    or &lt;all colors&gt;.  If L is needed to change to RGB, it is repeated (LLL).</span>
+<span class="sd">    Missing A channels are filled with 1.</span>
+
+<span class="sd">    :param arr1: one array to compare.</span>
+<span class="sd">    :param arr2: a second array to compare.</span>
+<span class="sd">    :returns: the two arrays, possibly modified.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">arrays</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;arr1&#39;</span><span class="p">:</span> <span class="n">arr1</span><span class="p">,</span>
+        <span class="s1">&#39;arr2&#39;</span><span class="p">:</span> <span class="n">arr2</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="c1"># Make sure we have 3 dimensional arrays</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">arrays</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="c1"># If any array is RGB, make sure all arrays are RGB.</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="n">arrays</span><span class="p">[</span><span class="s1">&#39;arr1&#39;</span> <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;arr2&#39;</span> <span class="k">else</span> <span class="s1">&#39;arr2&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">other</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">newarr</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+            <span class="n">newarr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">newarr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">newarr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">newarr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">arrays</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">newarr</span>
+    <span class="c1"># If only one array has an A channel, make sure all arrays have an A</span>
+    <span class="c1"># channel</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">other</span> <span class="o">=</span> <span class="n">arrays</span><span class="p">[</span><span class="s1">&#39;arr1&#39;</span> <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;arr2&#39;</span> <span class="k">else</span> <span class="s1">&#39;arr2&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">other</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+            <span class="n">newarr</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">other</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+            <span class="n">newarr</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="n">arr</span>
+            <span class="n">arrays</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">newarr</span>
+    <span class="k">return</span> <span class="n">arrays</span><span class="p">[</span><span class="s1">&#39;arr1&#39;</span><span class="p">],</span> <span class="n">arrays</span><span class="p">[</span><span class="s1">&#39;arr2&#39;</span><span class="p">]</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

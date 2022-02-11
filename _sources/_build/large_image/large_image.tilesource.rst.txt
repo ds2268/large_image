@@ -1,0 +1,37 @@
+large\_image.tilesource package
+===============================
+
+Submodules
+----------
+
+large\_image.tilesource.base module
+-----------------------------------
+
+.. automodule:: large_image.tilesource.base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+large\_image.tilesource.tiledict module
+---------------------------------------
+
+.. automodule:: large_image.tilesource.tiledict
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+large\_image.tilesource.utilities module
+----------------------------------------
+
+.. automodule:: large_image.tilesource.utilities
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: large_image.tilesource
+   :members:
+   :undoc-members:
+   :show-inheritance:

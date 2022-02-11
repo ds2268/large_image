@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>large_image package &mdash; large_image  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="large_image.cache_util package" href="large_image.cache_util.html" />
+    <link rel="prev" title="large_image" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> large_image
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tilesource_options.html">Tile Source Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../config_options.html">Configuration Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../image_conversion.html">Image Conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrade.html">Upgrading from Previous Versions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">large_image</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">large_image package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="large_image.cache_util.html">large_image.cache_util package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="large_image.tilesource.html">large_image.tilesource package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-large_image.config">large_image.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-large_image.constants">large_image.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-large_image.exceptions">large_image.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-large_image">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_bioformats/modules.html">large_image_source_bioformats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_deepzoom/modules.html">large_image_source_deepzoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_dummy/modules.html">large_image_source_dummy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_gdal/modules.html">large_image_source_gdal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_mapnik/modules.html">large_image_source_mapnik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_multi/modules.html">large_image_source_multi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../multi_source_specification.html">Multi Source Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_nd2/modules.html">large_image_source_nd2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_ometiff/modules.html">large_image_source_ometiff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_openjpeg/modules.html">large_image_source_openjpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_openslide/modules.html">large_image_source_openslide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_pil/modules.html">large_image_source_pil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_test/modules.html">large_image_source_test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_tiff/modules.html">large_image_source_tiff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_converter/modules.html">large_image_converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_tasks/modules.html">large_image_tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../girder_large_image/modules.html">girder_large_image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../girder_large_image_annotation/modules.html">girder_large_image_annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../annotations.html">Annotation Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">large_image</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">large_image</a> &raquo;</li>
+      <li>large_image package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/_build/large_image/large_image.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="large-image-package">
+<h1>large_image package<a class="headerlink" href="#large-image-package" title="Permalink to this headline">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="large_image.cache_util.html">large_image.cache_util package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="large_image.cache_util.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large_image.cache_util.html#module-large_image.cache_util.cache">large_image.cache_util.cache module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large_image.cache_util.html#module-large_image.cache_util.cachefactory">large_image.cache_util.cachefactory module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large_image.cache_util.html#module-large_image.cache_util.memcache">large_image.cache_util.memcache module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large_image.cache_util.html#module-large_image.cache_util">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="large_image.tilesource.html">large_image.tilesource package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="large_image.tilesource.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large_image.tilesource.html#module-large_image.tilesource.base">large_image.tilesource.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large_image.tilesource.html#module-large_image.tilesource.tiledict">large_image.tilesource.tiledict module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large_image.tilesource.html#module-large_image.tilesource.utilities">large_image.tilesource.utilities module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="large_image.tilesource.html#module-large_image.tilesource">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-large_image.config">
+<span id="large-image-config-module"></span><h2>large_image.config module<a class="headerlink" href="#module-large_image.config" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.config.getConfig">
+<span class="sig-prename descclassname"><span class="pre">large_image.config.</span></span><span class="sig-name descname"><span class="pre">getConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/config.html#getConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.config.getConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the config dictionary or a value from the cache config settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – if None, return the config dictionary.  Otherwise, return the
+value of the key if it is set or the default value if it is not.</p></li>
+<li><p><strong>default</strong> – a value to return if a key is requested and not set.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>either the config dictionary or the value of a key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.config.setConfig">
+<span class="sig-prename descclassname"><span class="pre">large_image.config.</span></span><span class="sig-name descname"><span class="pre">setConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/config.html#setConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.config.setConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a value in the config settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – the key to set.</p></li>
+<li><p><strong>value</strong> – the value to store in the key.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-large_image.constants">
+<span id="large-image-constants-module"></span><h2>large_image.constants module<a class="headerlink" href="#module-large_image.constants" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.constants.</span></span><span class="sig-name descname"><span class="pre">SourcePriority</span></span><a class="reference internal" href="../../_modules/large_image/constants.html#SourcePriority"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.constants.SourcePriority" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority.FALLBACK">
+<span class="sig-name descname"><span class="pre">FALLBACK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#large_image.constants.SourcePriority.FALLBACK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority.FALLBACK_HIGH">
+<span class="sig-name descname"><span class="pre">FALLBACK_HIGH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#large_image.constants.SourcePriority.FALLBACK_HIGH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority.HIGH">
+<span class="sig-name descname"><span class="pre">HIGH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#large_image.constants.SourcePriority.HIGH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority.HIGHER">
+<span class="sig-name descname"><span class="pre">HIGHER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#large_image.constants.SourcePriority.HIGHER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority.LOW">
+<span class="sig-name descname"><span class="pre">LOW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#large_image.constants.SourcePriority.LOW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority.LOWER">
+<span class="sig-name descname"><span class="pre">LOWER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#large_image.constants.SourcePriority.LOWER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority.MANUAL">
+<span class="sig-name descname"><span class="pre">MANUAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">9</span></em><a class="headerlink" href="#large_image.constants.SourcePriority.MANUAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority.MEDIUM">
+<span class="sig-name descname"><span class="pre">MEDIUM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#large_image.constants.SourcePriority.MEDIUM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority.NAMED">
+<span class="sig-name descname"><span class="pre">NAMED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#large_image.constants.SourcePriority.NAMED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.constants.SourcePriority.PREFERRED">
+<span class="sig-name descname"><span class="pre">PREFERRED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#large_image.constants.SourcePriority.PREFERRED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-large_image.exceptions">
+<span id="large-image-exceptions-module"></span><h2>large_image.exceptions module<a class="headerlink" href="#module-large_image.exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="large_image.exceptions.TileGeneralError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.exceptions.</span></span><span class="sig-name descname"><span class="pre">TileGeneralError</span></span><a class="reference internal" href="../../_modules/large_image/exceptions.html#TileGeneralError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.exceptions.TileGeneralError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.exceptions.TileGeneralException">
+<span class="sig-prename descclassname"><span class="pre">large_image.exceptions.</span></span><span class="sig-name descname"><span class="pre">TileGeneralException</span></span><a class="headerlink" href="#large_image.exceptions.TileGeneralException" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#large_image.exceptions.TileGeneralError" title="large_image.exceptions.TileGeneralError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileGeneralError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="large_image.exceptions.TileSourceAssetstoreError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.exceptions.</span></span><span class="sig-name descname"><span class="pre">TileSourceAssetstoreError</span></span><a class="reference internal" href="../../_modules/large_image/exceptions.html#TileSourceAssetstoreError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.exceptions.TileSourceAssetstoreError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#large_image.exceptions.TileSourceError" title="large_image.exceptions.TileSourceError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileSourceError</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.exceptions.TileSourceAssetstoreException">
+<span class="sig-prename descclassname"><span class="pre">large_image.exceptions.</span></span><span class="sig-name descname"><span class="pre">TileSourceAssetstoreException</span></span><a class="headerlink" href="#large_image.exceptions.TileSourceAssetstoreException" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#large_image.exceptions.TileSourceAssetstoreError" title="large_image.exceptions.TileSourceAssetstoreError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileSourceAssetstoreError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="large_image.exceptions.TileSourceError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.exceptions.</span></span><span class="sig-name descname"><span class="pre">TileSourceError</span></span><a class="reference internal" href="../../_modules/large_image/exceptions.html#TileSourceError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.exceptions.TileSourceError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#large_image.exceptions.TileGeneralError" title="large_image.exceptions.TileGeneralError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileGeneralError</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.exceptions.TileSourceException">
+<span class="sig-prename descclassname"><span class="pre">large_image.exceptions.</span></span><span class="sig-name descname"><span class="pre">TileSourceException</span></span><a class="headerlink" href="#large_image.exceptions.TileSourceException" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#large_image.exceptions.TileSourceError" title="large_image.exceptions.TileSourceError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileSourceError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="large_image.exceptions.TileSourceFileNotFoundError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.exceptions.</span></span><span class="sig-name descname"><span class="pre">TileSourceFileNotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/exceptions.html#TileSourceFileNotFoundError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.exceptions.TileSourceFileNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#large_image.exceptions.TileSourceError" title="large_image.exceptions.TileSourceError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileSourceError</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">FileNotFoundError</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-large_image">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-large_image" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="large_image" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="large_image.cache_util.html" class="btn btn-neutral float-right" title="large_image.cache_util package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

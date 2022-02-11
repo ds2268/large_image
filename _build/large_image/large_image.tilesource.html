@@ -1,0 +1,2523 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>large_image.tilesource package &mdash; large_image  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="large_image_source_bioformats" href="../large_image_source_bioformats/modules.html" />
+    <link rel="prev" title="large_image.cache_util package" href="large_image.cache_util.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> large_image
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../tilesource_options.html">Tile Source Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../config_options.html">Configuration Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../image_conversion.html">Image Conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrade.html">Upgrading from Previous Versions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">large_image</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="large_image.html">large_image package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="large_image.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="large_image.cache_util.html">large_image.cache_util package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">large_image.tilesource package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="large_image.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="large_image.html#module-large_image.config">large_image.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="large_image.html#module-large_image.constants">large_image.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="large_image.html#module-large_image.exceptions">large_image.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="large_image.html#module-large_image">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_bioformats/modules.html">large_image_source_bioformats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_deepzoom/modules.html">large_image_source_deepzoom</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_dummy/modules.html">large_image_source_dummy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_gdal/modules.html">large_image_source_gdal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_mapnik/modules.html">large_image_source_mapnik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_multi/modules.html">large_image_source_multi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../multi_source_specification.html">Multi Source Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_nd2/modules.html">large_image_source_nd2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_ometiff/modules.html">large_image_source_ometiff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_openjpeg/modules.html">large_image_source_openjpeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_openslide/modules.html">large_image_source_openslide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_pil/modules.html">large_image_source_pil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_test/modules.html">large_image_source_test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_source_tiff/modules.html">large_image_source_tiff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_converter/modules.html">large_image_converter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../large_image_tasks/modules.html">large_image_tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../girder_large_image/modules.html">girder_large_image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../girder_large_image_annotation/modules.html">girder_large_image_annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../annotations.html">Annotation Schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer Guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">large_image</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">large_image</a> &raquo;</li>
+          <li><a href="large_image.html">large_image package</a> &raquo;</li>
+      <li>large_image.tilesource package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/_build/large_image/large_image.tilesource.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="large-image-tilesource-package">
+<h1>large_image.tilesource package<a class="headerlink" href="#large-image-tilesource-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-large_image.tilesource.base">
+<span id="large-image-tilesource-base-module"></span><h2>large_image.tilesource.base module<a class="headerlink" href="#module-large_image.tilesource.base" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="large_image.tilesource.base.FileTileSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.tilesource.base.</span></span><span class="sig-name descname"><span class="pre">FileTileSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#FileTileSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.FileTileSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#large_image.tilesource.base.TileSource" title="large_image.tilesource.base.TileSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.tilesource.base.TileSource</span></code></a></p>
+<p>Initialize the tile class.  See the base class for other available
+parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – a filesystem path for the tile source.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.FileTileSource.canRead">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">canRead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#FileTileSource.canRead"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.FileTileSource.canRead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if we can read the input.  This takes the same parameters as
+__init__.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this class can read the input.  False if it
+cannot.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.FileTileSource.getLRUHash">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getLRUHash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#FileTileSource.getLRUHash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.FileTileSource.getLRUHash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string hash used as a key in the recently-used cache for tile
+sources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a string hash value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.FileTileSource.getState">
+<span class="sig-name descname"><span class="pre">getState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#FileTileSource.getState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.FileTileSource.getState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string reflecting the state of the tile source.  This is used
+as part of a cache key when hashing function return values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a string hash value of the source state.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.tilesource.base.</span></span><span class="sig-name descname"><span class="pre">TileSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'JPEG'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jpegQuality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jpegSubsampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiffCompression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raw'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initialize the tile class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jpegQuality</strong> – when serving jpegs, use this quality.</p></li>
+<li><p><strong>jpegSubsampling</strong> – when serving jpegs, use this subsampling (0 is
+full chroma, 1 is half, 2 is quarter).</p></li>
+<li><p><strong>encoding</strong> – ‘JPEG’, ‘PNG’, ‘TIFF’, or ‘TILED’.</p></li>
+<li><p><strong>edge</strong> – False to leave edge tiles whole, True or ‘crop’ to crop
+edge tiles, otherwise, an #rrggbb color to fill edges.</p></li>
+<li><p><strong>tiffCompression</strong> – the compression format to use when encoding a
+TIFF.</p></li>
+<li><p><strong>style</strong> – <p>if None, use the default style for the file.  Otherwise,
+this is a string with a json-encoded dictionary.  The style can
+contain the following keys:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">band</dt>
+<dd class="field-odd"><p>if -1 or None, and if style is specified at all, the
+greyscale value is used.  Otherwise, a 1-based numerical
+index into the channels of the image or a string that
+matches the interpretation of the band (‘red’, ‘green’,
+‘blue’, ‘gray’, ‘alpha’).  Note that ‘gray’ on an RGB or
+RGBA image will use the green band.</p>
+</dd>
+<dt class="field-even">frame</dt>
+<dd class="field-even"><p>if specified, override the frame value for this band.
+When used as part of a bands list, this can be used to
+composite multiple frames together.  It is most efficient
+if at least one band either doesn’t specify a frame
+parameter or specifies the same frame value as the primary
+query.</p>
+</dd>
+<dt class="field-odd">framedelta</dt>
+<dd class="field-odd"><p>if specified and frame is not specified, override
+the frame value for this band by using the current frame
+plus this value.</p>
+</dd>
+<dt class="field-even">min</dt>
+<dd class="field-even"><p>the value to map to the first palette value.  Defaults to
+0.  ‘auto’ to use 0 if the reported minimum and maximum of
+the band are between [0, 255] or use the reported minimum
+otherwise.  ‘min’ or ‘max’ to always uses the reported
+minimum or maximum.</p>
+</dd>
+<dt class="field-odd">max</dt>
+<dd class="field-odd"><p>the value to map to the last palette value.  Defaults to
+255.  ‘auto’ to use 0 if the reported minimum and maximum
+of the band are between [0, 255] or use the reported
+maximum otherwise.  ‘min’ or ‘max’ to always uses the
+reported minimum or maximum.</p>
+</dd>
+<dt class="field-even">palette</dt>
+<dd class="field-even"><p>a list of two or more color strings, where color
+strings are of the form #RRGGBB, #RRGGBBAA, #RGB, #RGBA, or
+any string parseable by the PIL modules, or, if it is
+installed, byt matplotlib.  Alternately, this can be a
+single color, which implies [‘#000’, &lt;color&gt;], or the name
+of a palettable paletter or, if available, a matplotlib
+palette.</p>
+</dd>
+<dt class="field-odd">nodata</dt>
+<dd class="field-odd"><p>the value to use for missing data.  null or unset to
+not use a nodata value.</p>
+</dd>
+<dt class="field-even">composite</dt>
+<dd class="field-even"><p>either ‘lighten’ or ‘multiply’.  Defaults to
+‘lighten’ for all except the alpha band.</p>
+</dd>
+<dt class="field-odd">clamp</dt>
+<dd class="field-odd"><p>either True to clamp (also called clip or crop) values
+outside of the [min, max] to the ends of the palette or
+False to make outside values transparent.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Alternately, the style object can contain a single key of ‘bands’,
+which has a value which is a list of style dictionaries as above,
+excepting that each must have a band that is not -1.  Bands are
+composited in the order listed.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.canRead">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">canRead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.canRead"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.canRead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if we can read the input.  This takes the same parameters as
+__init__.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this class can read the input.  False if it cannot.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.convertRegionScale">
+<span class="sig-name descname"><span class="pre">convertRegionScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourceRegion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cropToImage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.convertRegionScale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.convertRegionScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a region from one scale to another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sourceRegion</strong> – <p>a dictionary of optional values which specify the
+part of an image to process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">left</dt>
+<dd class="field-odd"><p>the left edge (inclusive) of the region to process.</p>
+</dd>
+<dt class="field-even">top</dt>
+<dd class="field-even"><p>the top edge (inclusive) of the region to process.</p>
+</dd>
+<dt class="field-odd">right</dt>
+<dd class="field-odd"><p>the right edge (exclusive) of the region to process.</p>
+</dd>
+<dt class="field-even">bottom</dt>
+<dd class="field-even"><p>the bottom edge (exclusive) of the region to process.</p>
+</dd>
+<dt class="field-odd">width</dt>
+<dd class="field-odd"><p>the width of the region to process.</p>
+</dd>
+<dt class="field-even">height</dt>
+<dd class="field-even"><p>the height of the region to process.</p>
+</dd>
+<dt class="field-odd">units</dt>
+<dd class="field-odd"><p>either ‘base_pixels’ (default), ‘pixels’, ‘mm’, or
+‘fraction’.  base_pixels are in maximum resolution pixels.
+pixels is in the specified magnification pixels.  mm is in the
+specified magnification scale.  fraction is a scale of 0 to 1.
+pixels and mm are only available if the magnification and mm
+per pixel are defined for the image.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>sourceScale</strong> – <p>a dictionary of optional values which specify the
+scale of the source region.  Required if the sourceRegion is
+in “mag_pixels” units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">magnification</dt>
+<dd class="field-odd"><p>the magnification ratio.</p>
+</dd>
+<dt class="field-even">mm_x</dt>
+<dd class="field-even"><p>the horizontal size of a pixel in millimeters.</p>
+</dd>
+<dt class="field-odd">mm_y</dt>
+<dd class="field-odd"><p>the vertical size of a pixel in millimeters.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>targetScale</strong> – <p>a dictionary of optional values which specify the
+scale of the target region.  Required in targetUnits is in
+“mag_pixels” units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">magnification</dt>
+<dd class="field-odd"><p>the magnification ratio.</p>
+</dd>
+<dt class="field-even">mm_x</dt>
+<dd class="field-even"><p>the horizontal size of a pixel in millimeters.</p>
+</dd>
+<dt class="field-odd">mm_y</dt>
+<dd class="field-odd"><p>the vertical size of a pixel in millimeters.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>targetUnits</strong> – if not None, convert the region to these units.
+Otherwise, the units are will either be the sourceRegion units if
+those are not “mag_pixels” or base_pixels.  If “mag_pixels”, the
+targetScale must be specified.</p></li>
+<li><p><strong>cropToImage</strong> – if True, don’t return region coordinates outside of
+the image.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.extensions">
+<span class="sig-name descname"><span class="pre">extensions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{None:</span> <span class="pre">8}</span></em><a class="headerlink" href="#large_image.tilesource.base.TileSource.extensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of known file extensions and the <code class="docutils literal notranslate"><span class="pre">SourcePriority</span></code> given
+to each.  It must contain a None key with a priority for the tile source
+when the extension does not match.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getAssociatedImage">
+<span class="sig-name descname"><span class="pre">getAssociatedImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imageKey</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getAssociatedImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getAssociatedImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an associated image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>imageKey</strong> – the key of the associated image to retrieve.</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.  Some options are width, height,
+encoding, jpegQuality, jpegSubsampling, and tiffCompression.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>imageData, imageMime: the image data and the mime type, or
+None if the associated image doesn’t exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getAssociatedImagesList">
+<span class="sig-name descname"><span class="pre">getAssociatedImagesList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getAssociatedImagesList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getAssociatedImagesList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of associated images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the list of image keys.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getBandInformation">
+<span class="sig-name descname"><span class="pre">getBandInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statistics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getBandInformation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getBandInformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about each band in the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>statistics</strong> – if True, compute statistics if they don’t already
+exist.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dictionary of one dictionary per band.  Each dictionary
+contains known values such as interpretation, min, max, mean,
+stdev.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getInternalMetadata">
+<span class="sig-name descname"><span class="pre">getInternalMetadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getInternalMetadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getInternalMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return additional known metadata about the tile source.  Data returned
+from this method is not guaranteed to be in any particular format or
+have specific values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a dictionary of data or None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getLRUHash">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getLRUHash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getLRUHash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getLRUHash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string hash used as a key in the recently-used cache for tile
+sources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a string hash value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getLevelForMagnification">
+<span class="sig-name descname"><span class="pre">getLevelForMagnification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magnification</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mm_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mm_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'round'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getLevelForMagnification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getLevelForMagnification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the level for a specific magnification or pixel size.  If the
+magnification is unknown or no level is sufficient resolution, and an
+exact match is not requested, the highest level will be returned.</p>
+<p>If none of magnification, mm_x, and mm_y are specified, the maximum
+level is returned.  If more than one of these values is given, an
+average of those given will be used (exact will require all of them to
+match).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>magnification</strong> – the magnification ratio.</p></li>
+<li><p><strong>exact</strong> – if True, only a level that matches exactly will be
+returned.</p></li>
+<li><p><strong>mm_x</strong> – the horizontal size of a pixel in millimeters.</p></li>
+<li><p><strong>mm_y</strong> – the vertical size of a pixel in millimeters.</p></li>
+<li><p><strong>rounding</strong> – if False, a fractional level may be returned.  If
+‘ceil’ or ‘round’, that function is used to convert the level to an
+integer (the exact flag still applies).  If None, the level is not
+cropped to the actual image’s level range.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the selected level or None for no match.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getMagnificationForLevel">
+<span class="sig-name descname"><span class="pre">getMagnificationForLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getMagnificationForLevel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getMagnificationForLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the magnification at a particular level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>level</strong> – None to use the maximum level, otherwise the level to get
+the magnification factor of.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>magnification, width of a pixel in mm, height of a pixel in mm.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getMetadata">
+<span class="sig-name descname"><span class="pre">getMetadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getMetadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return metadata about this tile source.  This contains</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">levels</dt>
+<dd class="field-odd"><p>number of tile levels in this image.</p>
+</dd>
+<dt class="field-even">sizeX</dt>
+<dd class="field-even"><p>width of the image in pixels.</p>
+</dd>
+<dt class="field-odd">sizeY</dt>
+<dd class="field-odd"><p>height of the image in pixels.</p>
+</dd>
+<dt class="field-even">tileWidth</dt>
+<dd class="field-even"><p>width of a tile in pixels.</p>
+</dd>
+<dt class="field-odd">tileHeight</dt>
+<dd class="field-odd"><p>height of a tile in pixels.</p>
+</dd>
+<dt class="field-even">magnification</dt>
+<dd class="field-even"><p>if known, the magnificaiton of the image.</p>
+</dd>
+<dt class="field-odd">mm_x</dt>
+<dd class="field-odd"><p>if known, the width of a pixel in millimeters.</p>
+</dd>
+<dt class="field-even">mm_y</dt>
+<dd class="field-even"><p>if known, the height of a pixel in millimeters.</p>
+</dd>
+</dl>
+<p>In addition to the keys that listed above, tile sources that expose
+multiple frames will also contain</p>
+<dl class="field-list simple">
+<dt class="field-odd">frames</dt>
+<dd class="field-odd"><p>a list of frames.  Each frame entry is a dictionary with</p>
+<dl class="field-list simple">
+<dt class="field-odd">Frame</dt>
+<dd class="field-odd"><p>a 0-values frame index (the location in the list)</p>
+</dd>
+<dt class="field-even">Channel</dt>
+<dd class="field-even"><p>optional.  The name of the channel, if known</p>
+</dd>
+<dt class="field-odd">IndexC</dt>
+<dd class="field-odd"><p>optional if unique.  A 0-based index into the channel
+list</p>
+</dd>
+<dt class="field-even">IndexT</dt>
+<dd class="field-even"><p>optional if unique.  A 0-based index for time values</p>
+</dd>
+<dt class="field-odd">IndexZ</dt>
+<dd class="field-odd"><p>optional if unique.  A 0-based index for z values</p>
+</dd>
+<dt class="field-even">IndexXY</dt>
+<dd class="field-even"><p>optional if unique.  A 0-based index for view (xy)
+values</p>
+</dd>
+<dt class="field-odd">Index</dt>
+<dd class="field-odd"><p>a 0-based index of non-channel unique sets.  If the
+frames vary only by channel and are adjacent, they will
+have the same index.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">IndexRange</dt>
+<dd class="field-even"><p>a dictionary of the number of unique index values from
+frames if greater than 1 (e.g., if an entry like IndexXY is not
+present, then all frames either do not have that value or have
+a value of 0).</p>
+</dd>
+<dt class="field-odd">channels</dt>
+<dd class="field-odd"><p>optional.  If known, a list of channel names</p>
+</dd>
+<dt class="field-even">channelmap</dt>
+<dd class="field-even"><p>optional.  If known, a dictionary of channel names
+with their offset into the channel list.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Note that this does nto include band information, though some tile
+sources may do so.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getNativeMagnification">
+<span class="sig-name descname"><span class="pre">getNativeMagnification</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getNativeMagnification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getNativeMagnification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the magnification for the highest-resolution level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>magnification, width of a pixel in mm, height of a pixel in mm.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getOneBandInformation">
+<span class="sig-name descname"><span class="pre">getOneBandInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">band</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getOneBandInformation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getOneBandInformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get band information for a single band.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>band</strong> – a 1-based band.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dictionary of band information.  See getBandInformation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getPixel">
+<span class="sig-name descname"><span class="pre">getPixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">includeTileRecord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getPixel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getPixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a single pixel from the current tile source.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>includeTileRecord</strong> – if True, include the tile used for computing
+the pixel in the response.</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.  Some options are region, output,
+encoding, jpegQuality, jpegSubsampling, tiffCompression, fill.  See
+tileIterator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dictionary with the value of the pixel for each channel on
+a scale of [0-255], including alpha, if available.  This may
+contain additional information.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getPointAtAnotherScale">
+<span class="sig-name descname"><span class="pre">getPointAtAnotherScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getPointAtAnotherScale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getPointAtAnotherScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a point as a (x, y) tuple, convert it from one scale to another.
+The sourceScale, sourceUnits, targetScale, and targetUnits parameters
+are the same as convertRegionScale, where sourceUnits are the units
+used with sourceScale.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getPreferredLevel">
+<span class="sig-name descname"><span class="pre">getPreferredLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getPreferredLevel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getPreferredLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a desired level (0 is minimum resolution, self.levels - 1 is max
+resolution), return the level that contains actual data that is no
+lower resolution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>level</strong> – desired level</p>
+</dd>
+<dt class="field-even">Returns level</dt>
+<dd class="field-even"><p>a level with actual data that is no lower resolution.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getRegion">
+<span class="sig-name descname"><span class="pre">getRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('image',)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getRegion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getRegion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a rectangular region from the current tile source.  Aspect ratio is
+preserved.  If neither width nor height is given, the original size of
+the highest resolution level is used.  If both are given, the returned
+image will be no larger than either size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – the desired format or a tuple of allowed formats.
+Formats are members of (TILE_FORMAT_PIL, TILE_FORMAT_NUMPY,
+TILE_FORMAT_IMAGE).  If TILE_FORMAT_IMAGE, encoding may be
+specified.</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.  Some options are region, output,
+encoding, jpegQuality, jpegSubsampling, tiffCompression, fill.  See
+tileIterator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>regionData, formatOrRegionMime: the image data and either the
+mime type, if the format is TILE_FORMAT_IMAGE, or the format.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getRegionAtAnotherScale">
+<span class="sig-name descname"><span class="pre">getRegionAtAnotherScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourceRegion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getRegionAtAnotherScale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getRegionAtAnotherScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>This takes the same parameters and returns the same results as
+getRegion, except instead of region and scale, it takes sourceRegion,
+sourceScale, targetScale, and targetUnits.  These parameters are the
+same as convertRegionScale.  See those two functions for parameter
+definitions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getSingleTile">
+<span class="sig-name descname"><span class="pre">getSingleTile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getSingleTile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getSingleTile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return any single tile from an iterator.  This takes exactly the same
+parameters as tileIterator.  Use tile_position to get a specific tile,
+otherwise the first tile is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a tile dictionary or None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getSingleTileAtAnotherScale">
+<span class="sig-name descname"><span class="pre">getSingleTileAtAnotherScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getSingleTileAtAnotherScale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getSingleTileAtAnotherScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return any single tile from a rescaled iterator.  This takes exactly
+the same parameters as tileIteratorAtAnotherScale.  Use tile_position
+to get a specific tile, otherwise the first tile is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a tile dictionary or None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getState">
+<span class="sig-name descname"><span class="pre">getState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string reflecting the state of the tile source.  This is used
+as part of a cache key when hashing function return values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a string hash value of the source state.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getThumbnail">
+<span class="sig-name descname"><span class="pre">getThumbnail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getThumbnail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getThumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a basic thumbnail from the current tile source.  Aspect ratio is
+preserved.  If neither width nor height is given, a default value is
+used.  If both are given, the thumbnail will be no larger than either
+size.  A thumbnail has the same options as a region except that it
+always includes the entire image and has a default size of 256 x 256.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> – maximum width in pixels.</p></li>
+<li><p><strong>height</strong> – maximum height in pixels.</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.  Some options are encoding,
+jpegQuality, jpegSubsampling, and tiffCompression.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>thumbData, thumbMime: the image data and the mime type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getTile">
+<span class="sig-name descname"><span class="pre">getTile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pilImageAllowed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numpyAllowed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparseFallback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getTile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getTile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a tile from a tile source, returning it as an binary image, a PIL
+image, or a numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – the 0-based x position of the tile on the specified z level.
+0 is left.</p></li>
+<li><p><strong>y</strong> – the 0-based y position of the tile on the specified z level.
+0 is top.</p></li>
+<li><p><strong>z</strong> – the z level of the tile.  May range from [0, self.levels],
+where 0 is the lowest resolution, single tile for the whole source.</p></li>
+<li><p><strong>pilImageAllowed</strong> – True if a PIL image may be returned.</p></li>
+<li><p><strong>numpyAllowed</strong> – True if a numpy image may be returned.  ‘always’
+to return a numpy array.</p></li>
+<li><p><strong>sparseFallback</strong> – if False and a tile doesn’t exist, raise an
+error.  If True, check if a lower resolution tile exists, and, if
+so, interpolate the needed data for this tile.</p></li>
+<li><p><strong>frame</strong> – the frame number within the tile source.  None is the
+same as 0 for multi-frame sources.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>either a numpy array, a PIL image, or a memory object with an
+image file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getTileCount">
+<span class="sig-name descname"><span class="pre">getTileCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getTileCount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getTileCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of tiles that the tileIterator will return.  See
+tileIterator for parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the number of tiles that the tileIterator will yield.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.getTileMimeType">
+<span class="sig-name descname"><span class="pre">getTileMimeType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getTileMimeType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.getTileMimeType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default mimetype for image tiles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the mime type of the tile.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.histogram">
+<span class="sig-name descname"><span class="pre">histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onlyMinMax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.histogram"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a histogram for a region.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dtype</strong> – if specified, the tiles must be this numpy.dtype.</p></li>
+<li><p><strong>onlyMinMax</strong> – if True, only return the minimum and maximum value
+of the region.</p></li>
+<li><p><strong>bins</strong> – the number of bins in the histogram.  This is passed to
+numpy.histogram, but needs to produce the same set of edges for
+each tile.</p></li>
+<li><p><strong>density</strong> – if True, scale the results based on the number of
+samples.</p></li>
+<li><p><strong>format</strong> – ignored.  Used to override the format for the
+tileIterator.</p></li>
+<li><p><strong>range</strong> – if None, use the computed min and (max + 1).  Otherwise,
+this is the range passed to numpy.histogram.  Note this is only
+accessible via kwargs as it otherwise overloads the range function.</p></li>
+<li><p><strong>args</strong> – parameters to pass to the tileIterator.</p></li>
+<li><p><strong>kwargs</strong> – parameters to pass to the tileIterator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if onlyMinMax is true, this is a dictionary with keys min and
+max, each of which is a numpy array with the minimum and maximum of
+all of the bands.  If onlyMinMax is False, this is a dictionary
+with a single key ‘histogram’ that contains a list of histograms
+per band.  Each entry is a dictionary with min, max, range, hist,
+and bin_edges.  range is [min, (max + 1)].  hist is the counts
+(normalized if density is True) for each bin.  bin_edges is an
+array one longer than the hist array that contains the boundaries
+between bins.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.mimeTypes">
+<span class="sig-name descname"><span class="pre">mimeTypes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{None:</span> <span class="pre">8}</span></em><a class="headerlink" href="#large_image.tilesource.base.TileSource.mimeTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of common mime-types handled by the source and the
+<code class="docutils literal notranslate"><span class="pre">SourcePriority</span></code> given to each.  This are used in place of or in
+additional to extensions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#large_image.tilesource.base.TileSource.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the tile source</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.tileFrames">
+<span class="sig-name descname"><span class="pre">tileFrames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('image',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frameList</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">framesAcross</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.tileFrames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.tileFrames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given the parameters for getRegion, plus a list of frames and the
+number of frames across, make a larger image composed of a region from
+each listed frame composited together.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – the desired format or a tuple of allowed formats.
+Formats are members of (TILE_FORMAT_PIL, TILE_FORMAT_NUMPY,
+TILE_FORMAT_IMAGE).  If TILE_FORMAT_IMAGE, encoding may be
+specified.</p></li>
+<li><p><strong>frameList</strong> – None for all frames, or a list of 0-based integers.</p></li>
+<li><p><strong>framesAcross</strong> – the number of frames across the final image.  If
+unspecified, this is the ceiling of sqrt(number of frames in frame
+list).</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.  Some options are region, output,
+encoding, jpegQuality, jpegSubsampling, tiffCompression, fill.  See
+tileIterator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>regionData, formatOrRegionMime: the image data and either the
+mime type, if the format is TILE_FORMAT_IMAGE, or the format.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.tileIterator">
+<span class="sig-name descname"><span class="pre">tileIterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('numpy',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.tileIterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.tileIterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate on all tiles in the specified region at the specified scale.
+Each tile is returned as part of a dictionary that includes</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">x, y</dt>
+<dd class="field-odd"><p>(left, top) coordinates in current magnification pixels</p>
+</dd>
+<dt class="field-even">width, height</dt>
+<dd class="field-even"><p>size of current tile in current magnification pixels</p>
+</dd>
+<dt class="field-odd">tile</dt>
+<dd class="field-odd"><p>cropped tile image</p>
+</dd>
+<dt class="field-even">format</dt>
+<dd class="field-even"><p>format of the tile</p>
+</dd>
+<dt class="field-odd">level</dt>
+<dd class="field-odd"><p>level of the current tile</p>
+</dd>
+<dt class="field-even">level_x, level_y</dt>
+<dd class="field-even"><p>the tile reference number within the level.
+Tiles are numbered (0, 0), (1, 0), (2, 0), etc.  The 0th tile
+yielded may not be (0, 0) if a region is specified.</p>
+</dd>
+<dt class="field-odd">tile_position</dt>
+<dd class="field-odd"><p>a dictionary of the tile position within the
+iterator, containing:</p>
+<dl class="field-list simple">
+<dt class="field-odd">level_x, level_y</dt>
+<dd class="field-odd"><p>the tile reference number within the level.</p>
+</dd>
+<dt class="field-even">region_x, region_y</dt>
+<dd class="field-even"><p>0, 0 is the first tile in the full
+iteration (when not restricting the iteration to a single
+tile).</p>
+</dd>
+<dt class="field-odd">position</dt>
+<dd class="field-odd"><p>a 0-based value for the tile within the full
+iteration.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">iterator_range</dt>
+<dd class="field-even"><p>a dictionary of the output range of the iterator:</p>
+<dl class="field-list simple">
+<dt class="field-odd">level_x_min, level_x_max</dt>
+<dd class="field-odd"><p>the tiles that are be included
+during the full iteration: [layer_x_min, layer_x_max).</p>
+</dd>
+<dt class="field-even">level_y_min, level_y_max</dt>
+<dd class="field-even"><p>the tiles that are be included
+during the full iteration: [layer_y_min, layer_y_max).</p>
+</dd>
+<dt class="field-odd">region_x_max, region_y_max</dt>
+<dd class="field-odd"><p>the number of tiles included during
+the full iteration.   This is layer_x_max - layer_x_min,
+layer_y_max - layer_y_min.</p>
+</dd>
+<dt class="field-even">position</dt>
+<dd class="field-even"><p>the total number of tiles included in the full
+iteration.  This is region_x_max * region_y_max.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">magnification</dt>
+<dd class="field-odd"><p>magnification of the current tile</p>
+</dd>
+<dt class="field-even">mm_x, mm_y</dt>
+<dd class="field-even"><p>size of the current tile pixel in millimeters.</p>
+</dd>
+<dt class="field-odd">gx, gy</dt>
+<dd class="field-odd"><p>(left, top) coordinates in maximum-resolution pixels</p>
+</dd>
+<dt class="field-even">gwidth, gheight</dt>
+<dd class="field-even"><p>size of of the current tile in maximum-resolution
+pixels.</p>
+</dd>
+<dt class="field-odd">tile_overlap</dt>
+<dd class="field-odd"><p>the amount of overlap with neighboring tiles (left,
+top, right, and bottom).  Overlap never extends outside of the
+requested region.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>If a region that includes partial tiles is requested, those tiles are
+cropped appropriately.  Most images will have tiles that get cropped
+along the right and bottom edges in any case.  If an exact
+magnification or scale is requested, no tiles will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – the desired format or a tuple of allowed formats.
+Formats are members of (TILE_FORMAT_PIL, TILE_FORMAT_NUMPY,
+TILE_FORMAT_IMAGE).  If TILE_FORMAT_IMAGE, encoding must be
+specified.</p></li>
+<li><p><strong>resample</strong> – <p>If True or one of PIL.Image.NEAREST, LANCZOS,
+BILINEAR, or BICUBIC to resample tiles that are not the target
+output size.  Tiles that are resampled will have additional
+dictionary entries of:</p>
+<dl class="field-list simple">
+<dt class="field-odd">scaled</dt>
+<dd class="field-odd"><p>the scaling factor that was applied (less than 1 is
+downsampled).</p>
+</dd>
+<dt class="field-even">tile_x, tile_y</dt>
+<dd class="field-even"><p>(left, top) coordinates before scaling</p>
+</dd>
+<dt class="field-odd">tile_width, tile_height</dt>
+<dd class="field-odd"><p>size of the current tile before
+scaling.</p>
+</dd>
+<dt class="field-even">tile_magnification</dt>
+<dd class="field-even"><p>magnification of the current tile before
+scaling.</p>
+</dd>
+<dt class="field-odd">tile_mm_x, tile_mm_y</dt>
+<dd class="field-odd"><p>size of a pixel in a tile in millimeters
+before scaling.</p>
+</dd>
+</dl>
+<p>Note that scipy.misc.imresize uses PIL internally.</p>
+</p></li>
+<li><p><strong>region</strong> – <p>a dictionary of optional values which specify the part
+of the image to process:</p>
+<dl class="field-list simple">
+<dt class="field-odd">left</dt>
+<dd class="field-odd"><p>the left edge (inclusive) of the region to process.</p>
+</dd>
+<dt class="field-even">top</dt>
+<dd class="field-even"><p>the top edge (inclusive) of the region to process.</p>
+</dd>
+<dt class="field-odd">right</dt>
+<dd class="field-odd"><p>the right edge (exclusive) of the region to process.</p>
+</dd>
+<dt class="field-even">bottom</dt>
+<dd class="field-even"><p>the bottom edge (exclusive) of the region to process.</p>
+</dd>
+<dt class="field-odd">width</dt>
+<dd class="field-odd"><p>the width of the region to process.</p>
+</dd>
+<dt class="field-even">height</dt>
+<dd class="field-even"><p>the height of the region to process.</p>
+</dd>
+<dt class="field-odd">units</dt>
+<dd class="field-odd"><p>either ‘base_pixels’ (default), ‘pixels’, ‘mm’, or
+‘fraction’.  base_pixels are in maximum resolution pixels.
+pixels is in the specified magnification pixels.  mm is in the
+specified magnification scale.  fraction is a scale of 0 to 1.
+pixels and mm are only available if the magnification and mm
+per pixel are defined for the image.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>output</strong> – <p>a dictionary of optional values which specify the size
+of the output.</p>
+<dl class="field-list simple">
+<dt class="field-odd">maxWidth</dt>
+<dd class="field-odd"><p>maximum width in pixels.  If either maxWidth or maxHeight
+is specified, magnification, mm_x, and mm_y are ignored.</p>
+</dd>
+<dt class="field-even">maxHeight</dt>
+<dd class="field-even"><p>maximum height in pixels.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>scale</strong> – <p>a dictionary of optional values which specify the scale
+of the region and / or output.  This applies to region if
+pixels or mm are used for inits.  It applies to output if
+neither output maxWidth nor maxHeight is specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">magnification</dt>
+<dd class="field-odd"><p>the magnification ratio.  Only used is maxWidth and
+maxHeight are not specified or None.</p>
+</dd>
+<dt class="field-even">mm_x</dt>
+<dd class="field-even"><p>the horizontal size of a pixel in millimeters.</p>
+</dd>
+<dt class="field-odd">mm_y</dt>
+<dd class="field-odd"><p>the vertical size of a pixel in millimeters.</p>
+</dd>
+<dt class="field-even">exact</dt>
+<dd class="field-even"><p>if True, only a level that matches exactly will be returned.
+This is only applied if magnification, mm_x, or mm_y is used.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>tile_position</strong> – if present, either a number to only yield the
+(tile_position)th tile [0 to (xmax - min) * (ymax - ymin)) that the
+iterator would yield, or a dictionary of {region_x, region_y} to
+yield that tile, where 0, 0 is the first tile yielded, and
+xmax - xmin - 1, ymax - ymin - 1 is the last tile yielded, or a
+dictionary of {level_x, level_y} to yield that specific tile if it
+is in the region.</p></li>
+<li><p><strong>tile_size</strong> – <p>if present, retile the output to the specified tile
+size.  If only width or only height is specified, the resultant
+tiles will be square.  This is a dictionary containing at least
+one of:</p>
+<dl class="field-list simple">
+<dt class="field-odd">width</dt>
+<dd class="field-odd"><p>the desired tile width.</p>
+</dd>
+<dt class="field-even">height</dt>
+<dd class="field-even"><p>the desired tile height.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>tile_overlap</strong> – <p>if present, retile the output adding a symmetric
+overlap to the tiles.  If either x or y is not specified, it
+defaults to zero.  The overlap does not change the tile size,
+only the stride of the tiles.  This is a dictionary containing:</p>
+<dl class="field-list">
+<dt class="field-odd">x</dt>
+<dd class="field-odd"><p>the horizontal overlap in pixels.</p>
+</dd>
+<dt class="field-even">y</dt>
+<dd class="field-even"><p>the vertical overlap in pixels.</p>
+</dd>
+<dt class="field-odd">edges</dt>
+<dd class="field-odd"><p>if True, then the edge tiles will exclude the overlap
+distance.  If unset or False, the edge tiles are full size.</p>
+<p>The overlap is conceptually split between the two sides of
+the tile.  This is only relevant to where overlap is reported
+or if edges is True</p>
+<p>As an example, suppose an image that is 8 pixels across
+(01234567) and a tile size of 5 is requested with an overlap of
+4.  If the edges option is False (the default), the following
+tiles are returned: 01234, 12345, 23456, 34567.  Each tile
+reports its overlap, and the non-overlapped area of each tile
+is 012, 3, 4, 567.  If the edges option is True, the tiles
+returned are: 012, 0123, 01234, 12345, 23456, 34567, 4567, 567,
+with the non-overlapped area of each as 0, 1, 2, 3, 4, 5, 6, 7.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>encoding</strong> – if format includes TILE_FORMAT_IMAGE, a valid PIL
+encoding (typically ‘PNG’, ‘JPEG’, or ‘TIFF’) or ‘TILED’ (identical
+to TIFF).  Must also be in the TileOutputMimeTypes map.</p></li>
+<li><p><strong>jpegQuality</strong> – the quality to use when encoding a JPEG.</p></li>
+<li><p><strong>jpegSubsampling</strong> – the subsampling level to use when encoding a
+JPEG.</p></li>
+<li><p><strong>tiffCompression</strong> – the compression format when encoding a TIFF.
+This is usually ‘raw’, ‘tiff_lzw’, ‘jpeg’, or ‘tiff_adobe_deflate’.
+Some of these are aliased: ‘none’, ‘lzw’, ‘deflate’.</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p>an iterator that returns a dictionary as listed above.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.tileIteratorAtAnotherScale">
+<span class="sig-name descname"><span class="pre">tileIteratorAtAnotherScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourceRegion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.tileIteratorAtAnotherScale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.tileIteratorAtAnotherScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>This takes the same parameters and returns the same results as
+tileIterator, except instead of region and scale, it takes
+sourceRegion, sourceScale, targetScale, and targetUnits.  These
+parameters are the same as convertRegionScale.  See those two functions
+for parameter definitions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.base.TileSource.wrapKey">
+<span class="sig-name descname"><span class="pre">wrapKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.wrapKey"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.base.TileSource.wrapKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a key for a tile source and function parameters that can be used
+as a unique cache key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – arguments to add to the hash.</p></li>
+<li><p><strong>kwaths</strong> – arguments to add to the hash.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a cache key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-large_image.tilesource.tiledict">
+<span id="large-image-tilesource-tiledict-module"></span><h2>large_image.tilesource.tiledict module<a class="headerlink" href="#module-large_image.tilesource.tiledict" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="large_image.tilesource.tiledict.LazyTileDict">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.tilesource.tiledict.</span></span><span class="sig-name descname"><span class="pre">LazyTileDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tileInfo</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/tiledict.html#LazyTileDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.tiledict.LazyTileDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+<p>Tiles returned from the tile iterator and dictionaries of information with
+actual image data in the ‘tile’ key and the format in the ‘format’ key.
+Since some applications need information about the tile but don’t need the
+image data, these two values are lazily computed.  The LazyTileDict can be
+treated like a regular dictionary, except that when either of those two
+keys are first accessed, they will cause the image to be loaded and
+possibly converted to a PIL image and cropped.</p>
+<p>Unless setFormat is called on the tile, tile images may always be returned
+as PIL images.</p>
+<p>Create a LazyTileDict dictionary where there is enough information to
+load the tile image.  ang and kwargs are as for the dict() class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tileInfo</strong> – a dictionary of x, y, level, format, encoding, crop,
+and source, used for fetching the tile image.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.tiledict.LazyTileDict.release">
+<span class="sig-name descname"><span class="pre">release</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/tiledict.html#LazyTileDict.release"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.tiledict.LazyTileDict.release" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the tile has been loaded, unload it.  It can be loaded again.  This
+is useful if you want to keep tiles available in memory but not their
+actual tile data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.tiledict.LazyTileDict.setFormat">
+<span class="sig-name descname"><span class="pre">setFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageKwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/tiledict.html#LazyTileDict.setFormat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.tiledict.LazyTileDict.setFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a more restrictive output format for a tile, possibly also resizing
+it via resampling.  If this is not called, the tile may either be
+returned as one of the specified formats or as a PIL image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – a tuple or list of allowed formats.  Formats are members
+of TILE_FORMAT_*.  This will avoid converting images if they are
+in the desired output encoding (regardless of subparameters).</p></li>
+<li><p><strong>resample</strong> – if not False or None, allow resampling.  Once turned
+on, this cannot be turned off on the tile.</p></li>
+<li><p><strong>imageKwargs</strong> – additional parameters that should be passed to
+_encodeImage.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-large_image.tilesource.utilities">
+<span id="large-image-tilesource-utilities-module"></span><h2>large_image.tilesource.utilities module<a class="headerlink" href="#module-large_image.tilesource.utilities" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.utilities.dictToEtree">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.utilities.</span></span><span class="sig-name descname"><span class="pre">dictToEtree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/utilities.html#dictToEtree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.utilities.dictToEtree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a dictionary in the style produced by etreeToDict back to an etree.
+Make an xml string via xml.etree.ElementTree.tostring(dictToEtree(
+dictionary), encoding=’utf8’, method=’xml’).  Note that this function and
+etreeToDict are not perfect conversions; numerical values are quoted in
+xml.  Plain key-value pairs are ambiguous whether they should be attributes
+or text values.  Text fields are collected together.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>d</strong> – a dictionary.</p>
+</dd>
+<dt class="field-even">Prarm root</dt>
+<dd class="field-even"><p>the root node to attach this dictionary to.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an etree.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.utilities.etreeToDict">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.utilities.</span></span><span class="sig-name descname"><span class="pre">etreeToDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/utilities.html#etreeToDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.utilities.etreeToDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an xml etree to a nested dictionary without schema names in the
+keys.  If you have an xml string, this can be converted to a dictionary via
+xml.etree.etreeToDict(ElementTree.fromstring(xml_string)).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>t</strong> – an etree.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a python dictionary with the results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.utilities.getAvailableNamedPalettes">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.utilities.</span></span><span class="sig-name descname"><span class="pre">getAvailableNamedPalettes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">includeColors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduced</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/utilities.html#getAvailableNamedPalettes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.utilities.getAvailableNamedPalettes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of all named palettes that can be used with getPaletteColors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>includeColors</strong> – if True, include named colors.  If False, only
+include actual palettes.</p></li>
+<li><p><strong>reduced</strong> – if True, exclude reversed palettes and palettes with
+fewer colors where a palette with the same basic name exists with more
+colors.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of names.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.utilities.getPaletteColors">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.utilities.</span></span><span class="sig-name descname"><span class="pre">getPaletteColors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/utilities.html#getPaletteColors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.utilities.getPaletteColors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list or a name, return a list of colors in the form of a numpy
+array of RGBA.  If a list, each entry is a color name resolvable by either
+PIL.ImageColor.getcolor, by matplotlib.colors, or a 3 or 4 element list or
+tuple of RGB(A) values on a scale of 0-1.  If this is NOT a list, then, if
+it can be parsed as a color, it is treated as [‘#000’, &lt;value&gt;].  If that
+cannot be parsed, then it is assumed to be a named palette in palettable
+(such as viridis.Viridis_12) or a named palette in matplotlib (including
+plugins).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – Either a list, a single color name, or a palette name.  See
+above.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a numpy array of RGBA value on the scale of [0-255].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.utilities.isValidPalette">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.utilities.</span></span><span class="sig-name descname"><span class="pre">isValidPalette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/utilities.html#isValidPalette"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.utilities.isValidPalette" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a value can be used as a palette.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – Either a list, a single color name, or a palette name.  See
+getPaletteColors.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a boolean; true if the value can be used as a palette.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.utilities.nearPowerOfTwo">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.utilities.</span></span><span class="sig-name descname"><span class="pre">nearPowerOfTwo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/utilities.html#nearPowerOfTwo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.utilities.nearPowerOfTwo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if two values are different by nearly a power of two.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val1</strong> – the first value to check.</p></li>
+<li><p><strong>val2</strong> – the second value to check.</p></li>
+<li><p><strong>tolerance</strong> – the maximum difference in the log2 ratio’s mantissa.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the valeus are nearly a power of two different from each
+other; false otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-large_image.tilesource">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-large_image.tilesource" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="large_image.tilesource.FileTileSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">FileTileSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#FileTileSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.FileTileSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#large_image.tilesource.base.TileSource" title="large_image.tilesource.base.TileSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.tilesource.base.TileSource</span></code></a></p>
+<p>Initialize the tile class.  See the base class for other available
+parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> – a filesystem path for the tile source.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.FileTileSource.canRead">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">canRead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#FileTileSource.canRead"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.FileTileSource.canRead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if we can read the input.  This takes the same parameters as
+__init__.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this class can read the input.  False if it
+cannot.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.FileTileSource.getLRUHash">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getLRUHash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#FileTileSource.getLRUHash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.FileTileSource.getLRUHash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string hash used as a key in the recently-used cache for tile
+sources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a string hash value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.FileTileSource.getState">
+<span class="sig-name descname"><span class="pre">getState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#FileTileSource.getState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.FileTileSource.getState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string reflecting the state of the tile source.  This is used
+as part of a cache key when hashing function return values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a string hash value of the source state.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="large_image.tilesource.TileGeneralError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">TileGeneralError</span></span><a class="reference internal" href="../../_modules/large_image/exceptions.html#TileGeneralError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileGeneralError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.tilesource.TileGeneralException">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">TileGeneralException</span></span><a class="headerlink" href="#large_image.tilesource.TileGeneralException" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="large_image.html#large_image.exceptions.TileGeneralError" title="large_image.exceptions.TileGeneralError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileGeneralError</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">TileSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'JPEG'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jpegQuality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jpegSubsampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiffCompression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raw'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initialize the tile class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jpegQuality</strong> – when serving jpegs, use this quality.</p></li>
+<li><p><strong>jpegSubsampling</strong> – when serving jpegs, use this subsampling (0 is
+full chroma, 1 is half, 2 is quarter).</p></li>
+<li><p><strong>encoding</strong> – ‘JPEG’, ‘PNG’, ‘TIFF’, or ‘TILED’.</p></li>
+<li><p><strong>edge</strong> – False to leave edge tiles whole, True or ‘crop’ to crop
+edge tiles, otherwise, an #rrggbb color to fill edges.</p></li>
+<li><p><strong>tiffCompression</strong> – the compression format to use when encoding a
+TIFF.</p></li>
+<li><p><strong>style</strong> – <p>if None, use the default style for the file.  Otherwise,
+this is a string with a json-encoded dictionary.  The style can
+contain the following keys:</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">band</dt>
+<dd class="field-odd"><p>if -1 or None, and if style is specified at all, the
+greyscale value is used.  Otherwise, a 1-based numerical
+index into the channels of the image or a string that
+matches the interpretation of the band (‘red’, ‘green’,
+‘blue’, ‘gray’, ‘alpha’).  Note that ‘gray’ on an RGB or
+RGBA image will use the green band.</p>
+</dd>
+<dt class="field-even">frame</dt>
+<dd class="field-even"><p>if specified, override the frame value for this band.
+When used as part of a bands list, this can be used to
+composite multiple frames together.  It is most efficient
+if at least one band either doesn’t specify a frame
+parameter or specifies the same frame value as the primary
+query.</p>
+</dd>
+<dt class="field-odd">framedelta</dt>
+<dd class="field-odd"><p>if specified and frame is not specified, override
+the frame value for this band by using the current frame
+plus this value.</p>
+</dd>
+<dt class="field-even">min</dt>
+<dd class="field-even"><p>the value to map to the first palette value.  Defaults to
+0.  ‘auto’ to use 0 if the reported minimum and maximum of
+the band are between [0, 255] or use the reported minimum
+otherwise.  ‘min’ or ‘max’ to always uses the reported
+minimum or maximum.</p>
+</dd>
+<dt class="field-odd">max</dt>
+<dd class="field-odd"><p>the value to map to the last palette value.  Defaults to
+255.  ‘auto’ to use 0 if the reported minimum and maximum
+of the band are between [0, 255] or use the reported
+maximum otherwise.  ‘min’ or ‘max’ to always uses the
+reported minimum or maximum.</p>
+</dd>
+<dt class="field-even">palette</dt>
+<dd class="field-even"><p>a list of two or more color strings, where color
+strings are of the form #RRGGBB, #RRGGBBAA, #RGB, #RGBA, or
+any string parseable by the PIL modules, or, if it is
+installed, byt matplotlib.  Alternately, this can be a
+single color, which implies [‘#000’, &lt;color&gt;], or the name
+of a palettable paletter or, if available, a matplotlib
+palette.</p>
+</dd>
+<dt class="field-odd">nodata</dt>
+<dd class="field-odd"><p>the value to use for missing data.  null or unset to
+not use a nodata value.</p>
+</dd>
+<dt class="field-even">composite</dt>
+<dd class="field-even"><p>either ‘lighten’ or ‘multiply’.  Defaults to
+‘lighten’ for all except the alpha band.</p>
+</dd>
+<dt class="field-odd">clamp</dt>
+<dd class="field-odd"><p>either True to clamp (also called clip or crop) values
+outside of the [min, max] to the ends of the palette or
+False to make outside values transparent.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Alternately, the style object can contain a single key of ‘bands’,
+which has a value which is a list of style dictionaries as above,
+excepting that each must have a band that is not -1.  Bands are
+composited in the order listed.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.canRead">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">canRead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.canRead"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.canRead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if we can read the input.  This takes the same parameters as
+__init__.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if this class can read the input.  False if it cannot.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.convertRegionScale">
+<span class="sig-name descname"><span class="pre">convertRegionScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourceRegion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cropToImage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.convertRegionScale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.convertRegionScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a region from one scale to another.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sourceRegion</strong> – <p>a dictionary of optional values which specify the
+part of an image to process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">left</dt>
+<dd class="field-odd"><p>the left edge (inclusive) of the region to process.</p>
+</dd>
+<dt class="field-even">top</dt>
+<dd class="field-even"><p>the top edge (inclusive) of the region to process.</p>
+</dd>
+<dt class="field-odd">right</dt>
+<dd class="field-odd"><p>the right edge (exclusive) of the region to process.</p>
+</dd>
+<dt class="field-even">bottom</dt>
+<dd class="field-even"><p>the bottom edge (exclusive) of the region to process.</p>
+</dd>
+<dt class="field-odd">width</dt>
+<dd class="field-odd"><p>the width of the region to process.</p>
+</dd>
+<dt class="field-even">height</dt>
+<dd class="field-even"><p>the height of the region to process.</p>
+</dd>
+<dt class="field-odd">units</dt>
+<dd class="field-odd"><p>either ‘base_pixels’ (default), ‘pixels’, ‘mm’, or
+‘fraction’.  base_pixels are in maximum resolution pixels.
+pixels is in the specified magnification pixels.  mm is in the
+specified magnification scale.  fraction is a scale of 0 to 1.
+pixels and mm are only available if the magnification and mm
+per pixel are defined for the image.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>sourceScale</strong> – <p>a dictionary of optional values which specify the
+scale of the source region.  Required if the sourceRegion is
+in “mag_pixels” units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">magnification</dt>
+<dd class="field-odd"><p>the magnification ratio.</p>
+</dd>
+<dt class="field-even">mm_x</dt>
+<dd class="field-even"><p>the horizontal size of a pixel in millimeters.</p>
+</dd>
+<dt class="field-odd">mm_y</dt>
+<dd class="field-odd"><p>the vertical size of a pixel in millimeters.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>targetScale</strong> – <p>a dictionary of optional values which specify the
+scale of the target region.  Required in targetUnits is in
+“mag_pixels” units.</p>
+<dl class="field-list simple">
+<dt class="field-odd">magnification</dt>
+<dd class="field-odd"><p>the magnification ratio.</p>
+</dd>
+<dt class="field-even">mm_x</dt>
+<dd class="field-even"><p>the horizontal size of a pixel in millimeters.</p>
+</dd>
+<dt class="field-odd">mm_y</dt>
+<dd class="field-odd"><p>the vertical size of a pixel in millimeters.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>targetUnits</strong> – if not None, convert the region to these units.
+Otherwise, the units are will either be the sourceRegion units if
+those are not “mag_pixels” or base_pixels.  If “mag_pixels”, the
+targetScale must be specified.</p></li>
+<li><p><strong>cropToImage</strong> – if True, don’t return region coordinates outside of
+the image.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.extensions">
+<span class="sig-name descname"><span class="pre">extensions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{None:</span> <span class="pre">8}</span></em><a class="headerlink" href="#large_image.tilesource.TileSource.extensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of known file extensions and the <code class="docutils literal notranslate"><span class="pre">SourcePriority</span></code> given
+to each.  It must contain a None key with a priority for the tile source
+when the extension does not match.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getAssociatedImage">
+<span class="sig-name descname"><span class="pre">getAssociatedImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imageKey</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getAssociatedImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getAssociatedImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an associated image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>imageKey</strong> – the key of the associated image to retrieve.</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.  Some options are width, height,
+encoding, jpegQuality, jpegSubsampling, and tiffCompression.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>imageData, imageMime: the image data and the mime type, or
+None if the associated image doesn’t exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getAssociatedImagesList">
+<span class="sig-name descname"><span class="pre">getAssociatedImagesList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getAssociatedImagesList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getAssociatedImagesList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of associated images.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the list of image keys.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getBandInformation">
+<span class="sig-name descname"><span class="pre">getBandInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statistics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getBandInformation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getBandInformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about each band in the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>statistics</strong> – if True, compute statistics if they don’t already
+exist.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dictionary of one dictionary per band.  Each dictionary
+contains known values such as interpretation, min, max, mean,
+stdev.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getInternalMetadata">
+<span class="sig-name descname"><span class="pre">getInternalMetadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getInternalMetadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getInternalMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return additional known metadata about the tile source.  Data returned
+from this method is not guaranteed to be in any particular format or
+have specific values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a dictionary of data or None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getLRUHash">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getLRUHash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getLRUHash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getLRUHash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string hash used as a key in the recently-used cache for tile
+sources.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a string hash value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getLevelForMagnification">
+<span class="sig-name descname"><span class="pre">getLevelForMagnification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magnification</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mm_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mm_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'round'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getLevelForMagnification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getLevelForMagnification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the level for a specific magnification or pixel size.  If the
+magnification is unknown or no level is sufficient resolution, and an
+exact match is not requested, the highest level will be returned.</p>
+<p>If none of magnification, mm_x, and mm_y are specified, the maximum
+level is returned.  If more than one of these values is given, an
+average of those given will be used (exact will require all of them to
+match).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>magnification</strong> – the magnification ratio.</p></li>
+<li><p><strong>exact</strong> – if True, only a level that matches exactly will be
+returned.</p></li>
+<li><p><strong>mm_x</strong> – the horizontal size of a pixel in millimeters.</p></li>
+<li><p><strong>mm_y</strong> – the vertical size of a pixel in millimeters.</p></li>
+<li><p><strong>rounding</strong> – if False, a fractional level may be returned.  If
+‘ceil’ or ‘round’, that function is used to convert the level to an
+integer (the exact flag still applies).  If None, the level is not
+cropped to the actual image’s level range.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the selected level or None for no match.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getMagnificationForLevel">
+<span class="sig-name descname"><span class="pre">getMagnificationForLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getMagnificationForLevel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getMagnificationForLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the magnification at a particular level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>level</strong> – None to use the maximum level, otherwise the level to get
+the magnification factor of.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>magnification, width of a pixel in mm, height of a pixel in mm.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getMetadata">
+<span class="sig-name descname"><span class="pre">getMetadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getMetadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return metadata about this tile source.  This contains</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">levels</dt>
+<dd class="field-odd"><p>number of tile levels in this image.</p>
+</dd>
+<dt class="field-even">sizeX</dt>
+<dd class="field-even"><p>width of the image in pixels.</p>
+</dd>
+<dt class="field-odd">sizeY</dt>
+<dd class="field-odd"><p>height of the image in pixels.</p>
+</dd>
+<dt class="field-even">tileWidth</dt>
+<dd class="field-even"><p>width of a tile in pixels.</p>
+</dd>
+<dt class="field-odd">tileHeight</dt>
+<dd class="field-odd"><p>height of a tile in pixels.</p>
+</dd>
+<dt class="field-even">magnification</dt>
+<dd class="field-even"><p>if known, the magnificaiton of the image.</p>
+</dd>
+<dt class="field-odd">mm_x</dt>
+<dd class="field-odd"><p>if known, the width of a pixel in millimeters.</p>
+</dd>
+<dt class="field-even">mm_y</dt>
+<dd class="field-even"><p>if known, the height of a pixel in millimeters.</p>
+</dd>
+</dl>
+<p>In addition to the keys that listed above, tile sources that expose
+multiple frames will also contain</p>
+<dl class="field-list simple">
+<dt class="field-odd">frames</dt>
+<dd class="field-odd"><p>a list of frames.  Each frame entry is a dictionary with</p>
+<dl class="field-list simple">
+<dt class="field-odd">Frame</dt>
+<dd class="field-odd"><p>a 0-values frame index (the location in the list)</p>
+</dd>
+<dt class="field-even">Channel</dt>
+<dd class="field-even"><p>optional.  The name of the channel, if known</p>
+</dd>
+<dt class="field-odd">IndexC</dt>
+<dd class="field-odd"><p>optional if unique.  A 0-based index into the channel
+list</p>
+</dd>
+<dt class="field-even">IndexT</dt>
+<dd class="field-even"><p>optional if unique.  A 0-based index for time values</p>
+</dd>
+<dt class="field-odd">IndexZ</dt>
+<dd class="field-odd"><p>optional if unique.  A 0-based index for z values</p>
+</dd>
+<dt class="field-even">IndexXY</dt>
+<dd class="field-even"><p>optional if unique.  A 0-based index for view (xy)
+values</p>
+</dd>
+<dt class="field-odd">Index</dt>
+<dd class="field-odd"><p>a 0-based index of non-channel unique sets.  If the
+frames vary only by channel and are adjacent, they will
+have the same index.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">IndexRange</dt>
+<dd class="field-even"><p>a dictionary of the number of unique index values from
+frames if greater than 1 (e.g., if an entry like IndexXY is not
+present, then all frames either do not have that value or have
+a value of 0).</p>
+</dd>
+<dt class="field-odd">channels</dt>
+<dd class="field-odd"><p>optional.  If known, a list of channel names</p>
+</dd>
+<dt class="field-even">channelmap</dt>
+<dd class="field-even"><p>optional.  If known, a dictionary of channel names
+with their offset into the channel list.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Note that this does nto include band information, though some tile
+sources may do so.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getNativeMagnification">
+<span class="sig-name descname"><span class="pre">getNativeMagnification</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getNativeMagnification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getNativeMagnification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the magnification for the highest-resolution level.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>magnification, width of a pixel in mm, height of a pixel in mm.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getOneBandInformation">
+<span class="sig-name descname"><span class="pre">getOneBandInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">band</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getOneBandInformation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getOneBandInformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get band information for a single band.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>band</strong> – a 1-based band.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dictionary of band information.  See getBandInformation.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getPixel">
+<span class="sig-name descname"><span class="pre">getPixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">includeTileRecord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getPixel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getPixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a single pixel from the current tile source.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>includeTileRecord</strong> – if True, include the tile used for computing
+the pixel in the response.</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.  Some options are region, output,
+encoding, jpegQuality, jpegSubsampling, tiffCompression, fill.  See
+tileIterator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a dictionary with the value of the pixel for each channel on
+a scale of [0-255], including alpha, if available.  This may
+contain additional information.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getPointAtAnotherScale">
+<span class="sig-name descname"><span class="pre">getPointAtAnotherScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getPointAtAnotherScale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getPointAtAnotherScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a point as a (x, y) tuple, convert it from one scale to another.
+The sourceScale, sourceUnits, targetScale, and targetUnits parameters
+are the same as convertRegionScale, where sourceUnits are the units
+used with sourceScale.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getPreferredLevel">
+<span class="sig-name descname"><span class="pre">getPreferredLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getPreferredLevel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getPreferredLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a desired level (0 is minimum resolution, self.levels - 1 is max
+resolution), return the level that contains actual data that is no
+lower resolution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>level</strong> – desired level</p>
+</dd>
+<dt class="field-even">Returns level</dt>
+<dd class="field-even"><p>a level with actual data that is no lower resolution.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getRegion">
+<span class="sig-name descname"><span class="pre">getRegion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('image',)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getRegion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getRegion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a rectangular region from the current tile source.  Aspect ratio is
+preserved.  If neither width nor height is given, the original size of
+the highest resolution level is used.  If both are given, the returned
+image will be no larger than either size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – the desired format or a tuple of allowed formats.
+Formats are members of (TILE_FORMAT_PIL, TILE_FORMAT_NUMPY,
+TILE_FORMAT_IMAGE).  If TILE_FORMAT_IMAGE, encoding may be
+specified.</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.  Some options are region, output,
+encoding, jpegQuality, jpegSubsampling, tiffCompression, fill.  See
+tileIterator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>regionData, formatOrRegionMime: the image data and either the
+mime type, if the format is TILE_FORMAT_IMAGE, or the format.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getRegionAtAnotherScale">
+<span class="sig-name descname"><span class="pre">getRegionAtAnotherScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourceRegion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getRegionAtAnotherScale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getRegionAtAnotherScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>This takes the same parameters and returns the same results as
+getRegion, except instead of region and scale, it takes sourceRegion,
+sourceScale, targetScale, and targetUnits.  These parameters are the
+same as convertRegionScale.  See those two functions for parameter
+definitions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getSingleTile">
+<span class="sig-name descname"><span class="pre">getSingleTile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getSingleTile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getSingleTile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return any single tile from an iterator.  This takes exactly the same
+parameters as tileIterator.  Use tile_position to get a specific tile,
+otherwise the first tile is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a tile dictionary or None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getSingleTileAtAnotherScale">
+<span class="sig-name descname"><span class="pre">getSingleTileAtAnotherScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getSingleTileAtAnotherScale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getSingleTileAtAnotherScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return any single tile from a rescaled iterator.  This takes exactly
+the same parameters as tileIteratorAtAnotherScale.  Use tile_position
+to get a specific tile, otherwise the first tile is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a tile dictionary or None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getState">
+<span class="sig-name descname"><span class="pre">getState</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string reflecting the state of the tile source.  This is used
+as part of a cache key when hashing function return values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a string hash value of the source state.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getThumbnail">
+<span class="sig-name descname"><span class="pre">getThumbnail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getThumbnail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getThumbnail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a basic thumbnail from the current tile source.  Aspect ratio is
+preserved.  If neither width nor height is given, a default value is
+used.  If both are given, the thumbnail will be no larger than either
+size.  A thumbnail has the same options as a region except that it
+always includes the entire image and has a default size of 256 x 256.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> – maximum width in pixels.</p></li>
+<li><p><strong>height</strong> – maximum height in pixels.</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.  Some options are encoding,
+jpegQuality, jpegSubsampling, and tiffCompression.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>thumbData, thumbMime: the image data and the mime type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getTile">
+<span class="sig-name descname"><span class="pre">getTile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pilImageAllowed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numpyAllowed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparseFallback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getTile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getTile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a tile from a tile source, returning it as an binary image, a PIL
+image, or a numpy array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – the 0-based x position of the tile on the specified z level.
+0 is left.</p></li>
+<li><p><strong>y</strong> – the 0-based y position of the tile on the specified z level.
+0 is top.</p></li>
+<li><p><strong>z</strong> – the z level of the tile.  May range from [0, self.levels],
+where 0 is the lowest resolution, single tile for the whole source.</p></li>
+<li><p><strong>pilImageAllowed</strong> – True if a PIL image may be returned.</p></li>
+<li><p><strong>numpyAllowed</strong> – True if a numpy image may be returned.  ‘always’
+to return a numpy array.</p></li>
+<li><p><strong>sparseFallback</strong> – if False and a tile doesn’t exist, raise an
+error.  If True, check if a lower resolution tile exists, and, if
+so, interpolate the needed data for this tile.</p></li>
+<li><p><strong>frame</strong> – the frame number within the tile source.  None is the
+same as 0 for multi-frame sources.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>either a numpy array, a PIL image, or a memory object with an
+image file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getTileCount">
+<span class="sig-name descname"><span class="pre">getTileCount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getTileCount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getTileCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of tiles that the tileIterator will return.  See
+tileIterator for parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the number of tiles that the tileIterator will yield.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.getTileMimeType">
+<span class="sig-name descname"><span class="pre">getTileMimeType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.getTileMimeType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.getTileMimeType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the default mimetype for image tiles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the mime type of the tile.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.histogram">
+<span class="sig-name descname"><span class="pre">histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">onlyMinMax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.histogram"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a histogram for a region.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dtype</strong> – if specified, the tiles must be this numpy.dtype.</p></li>
+<li><p><strong>onlyMinMax</strong> – if True, only return the minimum and maximum value
+of the region.</p></li>
+<li><p><strong>bins</strong> – the number of bins in the histogram.  This is passed to
+numpy.histogram, but needs to produce the same set of edges for
+each tile.</p></li>
+<li><p><strong>density</strong> – if True, scale the results based on the number of
+samples.</p></li>
+<li><p><strong>format</strong> – ignored.  Used to override the format for the
+tileIterator.</p></li>
+<li><p><strong>range</strong> – if None, use the computed min and (max + 1).  Otherwise,
+this is the range passed to numpy.histogram.  Note this is only
+accessible via kwargs as it otherwise overloads the range function.</p></li>
+<li><p><strong>args</strong> – parameters to pass to the tileIterator.</p></li>
+<li><p><strong>kwargs</strong> – parameters to pass to the tileIterator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>if onlyMinMax is true, this is a dictionary with keys min and
+max, each of which is a numpy array with the minimum and maximum of
+all of the bands.  If onlyMinMax is False, this is a dictionary
+with a single key ‘histogram’ that contains a list of histograms
+per band.  Each entry is a dictionary with min, max, range, hist,
+and bin_edges.  range is [min, (max + 1)].  hist is the counts
+(normalized if density is True) for each bin.  bin_edges is an
+array one longer than the hist array that contains the boundaries
+between bins.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.mimeTypes">
+<span class="sig-name descname"><span class="pre">mimeTypes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{None:</span> <span class="pre">8}</span></em><a class="headerlink" href="#large_image.tilesource.TileSource.mimeTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dictionary of common mime-types handled by the source and the
+<code class="docutils literal notranslate"><span class="pre">SourcePriority</span></code> given to each.  This are used in place of or in
+additional to extensions.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#large_image.tilesource.TileSource.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the tile source</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.tileFrames">
+<span class="sig-name descname"><span class="pre">tileFrames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('image',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frameList</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">framesAcross</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.tileFrames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.tileFrames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given the parameters for getRegion, plus a list of frames and the
+number of frames across, make a larger image composed of a region from
+each listed frame composited together.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – the desired format or a tuple of allowed formats.
+Formats are members of (TILE_FORMAT_PIL, TILE_FORMAT_NUMPY,
+TILE_FORMAT_IMAGE).  If TILE_FORMAT_IMAGE, encoding may be
+specified.</p></li>
+<li><p><strong>frameList</strong> – None for all frames, or a list of 0-based integers.</p></li>
+<li><p><strong>framesAcross</strong> – the number of frames across the final image.  If
+unspecified, this is the ceiling of sqrt(number of frames in frame
+list).</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.  Some options are region, output,
+encoding, jpegQuality, jpegSubsampling, tiffCompression, fill.  See
+tileIterator.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>regionData, formatOrRegionMime: the image data and either the
+mime type, if the format is TILE_FORMAT_IMAGE, or the format.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.tileIterator">
+<span class="sig-name descname"><span class="pre">tileIterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('numpy',)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.tileIterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.tileIterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate on all tiles in the specified region at the specified scale.
+Each tile is returned as part of a dictionary that includes</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">x, y</dt>
+<dd class="field-odd"><p>(left, top) coordinates in current magnification pixels</p>
+</dd>
+<dt class="field-even">width, height</dt>
+<dd class="field-even"><p>size of current tile in current magnification pixels</p>
+</dd>
+<dt class="field-odd">tile</dt>
+<dd class="field-odd"><p>cropped tile image</p>
+</dd>
+<dt class="field-even">format</dt>
+<dd class="field-even"><p>format of the tile</p>
+</dd>
+<dt class="field-odd">level</dt>
+<dd class="field-odd"><p>level of the current tile</p>
+</dd>
+<dt class="field-even">level_x, level_y</dt>
+<dd class="field-even"><p>the tile reference number within the level.
+Tiles are numbered (0, 0), (1, 0), (2, 0), etc.  The 0th tile
+yielded may not be (0, 0) if a region is specified.</p>
+</dd>
+<dt class="field-odd">tile_position</dt>
+<dd class="field-odd"><p>a dictionary of the tile position within the
+iterator, containing:</p>
+<dl class="field-list simple">
+<dt class="field-odd">level_x, level_y</dt>
+<dd class="field-odd"><p>the tile reference number within the level.</p>
+</dd>
+<dt class="field-even">region_x, region_y</dt>
+<dd class="field-even"><p>0, 0 is the first tile in the full
+iteration (when not restricting the iteration to a single
+tile).</p>
+</dd>
+<dt class="field-odd">position</dt>
+<dd class="field-odd"><p>a 0-based value for the tile within the full
+iteration.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">iterator_range</dt>
+<dd class="field-even"><p>a dictionary of the output range of the iterator:</p>
+<dl class="field-list simple">
+<dt class="field-odd">level_x_min, level_x_max</dt>
+<dd class="field-odd"><p>the tiles that are be included
+during the full iteration: [layer_x_min, layer_x_max).</p>
+</dd>
+<dt class="field-even">level_y_min, level_y_max</dt>
+<dd class="field-even"><p>the tiles that are be included
+during the full iteration: [layer_y_min, layer_y_max).</p>
+</dd>
+<dt class="field-odd">region_x_max, region_y_max</dt>
+<dd class="field-odd"><p>the number of tiles included during
+the full iteration.   This is layer_x_max - layer_x_min,
+layer_y_max - layer_y_min.</p>
+</dd>
+<dt class="field-even">position</dt>
+<dd class="field-even"><p>the total number of tiles included in the full
+iteration.  This is region_x_max * region_y_max.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">magnification</dt>
+<dd class="field-odd"><p>magnification of the current tile</p>
+</dd>
+<dt class="field-even">mm_x, mm_y</dt>
+<dd class="field-even"><p>size of the current tile pixel in millimeters.</p>
+</dd>
+<dt class="field-odd">gx, gy</dt>
+<dd class="field-odd"><p>(left, top) coordinates in maximum-resolution pixels</p>
+</dd>
+<dt class="field-even">gwidth, gheight</dt>
+<dd class="field-even"><p>size of of the current tile in maximum-resolution
+pixels.</p>
+</dd>
+<dt class="field-odd">tile_overlap</dt>
+<dd class="field-odd"><p>the amount of overlap with neighboring tiles (left,
+top, right, and bottom).  Overlap never extends outside of the
+requested region.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>If a region that includes partial tiles is requested, those tiles are
+cropped appropriately.  Most images will have tiles that get cropped
+along the right and bottom edges in any case.  If an exact
+magnification or scale is requested, no tiles will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – the desired format or a tuple of allowed formats.
+Formats are members of (TILE_FORMAT_PIL, TILE_FORMAT_NUMPY,
+TILE_FORMAT_IMAGE).  If TILE_FORMAT_IMAGE, encoding must be
+specified.</p></li>
+<li><p><strong>resample</strong> – <p>If True or one of PIL.Image.NEAREST, LANCZOS,
+BILINEAR, or BICUBIC to resample tiles that are not the target
+output size.  Tiles that are resampled will have additional
+dictionary entries of:</p>
+<dl class="field-list simple">
+<dt class="field-odd">scaled</dt>
+<dd class="field-odd"><p>the scaling factor that was applied (less than 1 is
+downsampled).</p>
+</dd>
+<dt class="field-even">tile_x, tile_y</dt>
+<dd class="field-even"><p>(left, top) coordinates before scaling</p>
+</dd>
+<dt class="field-odd">tile_width, tile_height</dt>
+<dd class="field-odd"><p>size of the current tile before
+scaling.</p>
+</dd>
+<dt class="field-even">tile_magnification</dt>
+<dd class="field-even"><p>magnification of the current tile before
+scaling.</p>
+</dd>
+<dt class="field-odd">tile_mm_x, tile_mm_y</dt>
+<dd class="field-odd"><p>size of a pixel in a tile in millimeters
+before scaling.</p>
+</dd>
+</dl>
+<p>Note that scipy.misc.imresize uses PIL internally.</p>
+</p></li>
+<li><p><strong>region</strong> – <p>a dictionary of optional values which specify the part
+of the image to process:</p>
+<dl class="field-list simple">
+<dt class="field-odd">left</dt>
+<dd class="field-odd"><p>the left edge (inclusive) of the region to process.</p>
+</dd>
+<dt class="field-even">top</dt>
+<dd class="field-even"><p>the top edge (inclusive) of the region to process.</p>
+</dd>
+<dt class="field-odd">right</dt>
+<dd class="field-odd"><p>the right edge (exclusive) of the region to process.</p>
+</dd>
+<dt class="field-even">bottom</dt>
+<dd class="field-even"><p>the bottom edge (exclusive) of the region to process.</p>
+</dd>
+<dt class="field-odd">width</dt>
+<dd class="field-odd"><p>the width of the region to process.</p>
+</dd>
+<dt class="field-even">height</dt>
+<dd class="field-even"><p>the height of the region to process.</p>
+</dd>
+<dt class="field-odd">units</dt>
+<dd class="field-odd"><p>either ‘base_pixels’ (default), ‘pixels’, ‘mm’, or
+‘fraction’.  base_pixels are in maximum resolution pixels.
+pixels is in the specified magnification pixels.  mm is in the
+specified magnification scale.  fraction is a scale of 0 to 1.
+pixels and mm are only available if the magnification and mm
+per pixel are defined for the image.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>output</strong> – <p>a dictionary of optional values which specify the size
+of the output.</p>
+<dl class="field-list simple">
+<dt class="field-odd">maxWidth</dt>
+<dd class="field-odd"><p>maximum width in pixels.  If either maxWidth or maxHeight
+is specified, magnification, mm_x, and mm_y are ignored.</p>
+</dd>
+<dt class="field-even">maxHeight</dt>
+<dd class="field-even"><p>maximum height in pixels.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>scale</strong> – <p>a dictionary of optional values which specify the scale
+of the region and / or output.  This applies to region if
+pixels or mm are used for inits.  It applies to output if
+neither output maxWidth nor maxHeight is specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">magnification</dt>
+<dd class="field-odd"><p>the magnification ratio.  Only used is maxWidth and
+maxHeight are not specified or None.</p>
+</dd>
+<dt class="field-even">mm_x</dt>
+<dd class="field-even"><p>the horizontal size of a pixel in millimeters.</p>
+</dd>
+<dt class="field-odd">mm_y</dt>
+<dd class="field-odd"><p>the vertical size of a pixel in millimeters.</p>
+</dd>
+<dt class="field-even">exact</dt>
+<dd class="field-even"><p>if True, only a level that matches exactly will be returned.
+This is only applied if magnification, mm_x, or mm_y is used.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>tile_position</strong> – if present, either a number to only yield the
+(tile_position)th tile [0 to (xmax - min) * (ymax - ymin)) that the
+iterator would yield, or a dictionary of {region_x, region_y} to
+yield that tile, where 0, 0 is the first tile yielded, and
+xmax - xmin - 1, ymax - ymin - 1 is the last tile yielded, or a
+dictionary of {level_x, level_y} to yield that specific tile if it
+is in the region.</p></li>
+<li><p><strong>tile_size</strong> – <p>if present, retile the output to the specified tile
+size.  If only width or only height is specified, the resultant
+tiles will be square.  This is a dictionary containing at least
+one of:</p>
+<dl class="field-list simple">
+<dt class="field-odd">width</dt>
+<dd class="field-odd"><p>the desired tile width.</p>
+</dd>
+<dt class="field-even">height</dt>
+<dd class="field-even"><p>the desired tile height.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>tile_overlap</strong> – <p>if present, retile the output adding a symmetric
+overlap to the tiles.  If either x or y is not specified, it
+defaults to zero.  The overlap does not change the tile size,
+only the stride of the tiles.  This is a dictionary containing:</p>
+<dl class="field-list">
+<dt class="field-odd">x</dt>
+<dd class="field-odd"><p>the horizontal overlap in pixels.</p>
+</dd>
+<dt class="field-even">y</dt>
+<dd class="field-even"><p>the vertical overlap in pixels.</p>
+</dd>
+<dt class="field-odd">edges</dt>
+<dd class="field-odd"><p>if True, then the edge tiles will exclude the overlap
+distance.  If unset or False, the edge tiles are full size.</p>
+<p>The overlap is conceptually split between the two sides of
+the tile.  This is only relevant to where overlap is reported
+or if edges is True</p>
+<p>As an example, suppose an image that is 8 pixels across
+(01234567) and a tile size of 5 is requested with an overlap of
+4.  If the edges option is False (the default), the following
+tiles are returned: 01234, 12345, 23456, 34567.  Each tile
+reports its overlap, and the non-overlapped area of each tile
+is 012, 3, 4, 567.  If the edges option is True, the tiles
+returned are: 012, 0123, 01234, 12345, 23456, 34567, 4567, 567,
+with the non-overlapped area of each as 0, 1, 2, 3, 4, 5, 6, 7.</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>encoding</strong> – if format includes TILE_FORMAT_IMAGE, a valid PIL
+encoding (typically ‘PNG’, ‘JPEG’, or ‘TIFF’) or ‘TILED’ (identical
+to TIFF).  Must also be in the TileOutputMimeTypes map.</p></li>
+<li><p><strong>jpegQuality</strong> – the quality to use when encoding a JPEG.</p></li>
+<li><p><strong>jpegSubsampling</strong> – the subsampling level to use when encoding a
+JPEG.</p></li>
+<li><p><strong>tiffCompression</strong> – the compression format when encoding a TIFF.
+This is usually ‘raw’, ‘tiff_lzw’, ‘jpeg’, or ‘tiff_adobe_deflate’.
+Some of these are aliased: ‘none’, ‘lzw’, ‘deflate’.</p></li>
+<li><p><strong>kwargs</strong> – optional arguments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p>an iterator that returns a dictionary as listed above.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.tileIteratorAtAnotherScale">
+<span class="sig-name descname"><span class="pre">tileIteratorAtAnotherScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourceRegion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetScale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetUnits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.tileIteratorAtAnotherScale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.tileIteratorAtAnotherScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>This takes the same parameters and returns the same results as
+tileIterator, except instead of region and scale, it takes
+sourceRegion, sourceScale, targetScale, and targetUnits.  These
+parameters are the same as convertRegionScale.  See those two functions
+for parameter definitions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSource.wrapKey">
+<span class="sig-name descname"><span class="pre">wrapKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/base.html#TileSource.wrapKey"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSource.wrapKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a key for a tile source and function parameters that can be used
+as a unique cache key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – arguments to add to the hash.</p></li>
+<li><p><strong>kwaths</strong> – arguments to add to the hash.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a cache key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSourceAssetstoreError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">TileSourceAssetstoreError</span></span><a class="reference internal" href="../../_modules/large_image/exceptions.html#TileSourceAssetstoreError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSourceAssetstoreError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="large_image.html#large_image.exceptions.TileSourceError" title="large_image.exceptions.TileSourceError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileSourceError</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSourceAssetstoreException">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">TileSourceAssetstoreException</span></span><a class="headerlink" href="#large_image.tilesource.TileSourceAssetstoreException" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="large_image.html#large_image.exceptions.TileSourceAssetstoreError" title="large_image.exceptions.TileSourceAssetstoreError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileSourceAssetstoreError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSourceError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">TileSourceError</span></span><a class="reference internal" href="../../_modules/large_image/exceptions.html#TileSourceError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSourceError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="large_image.html#large_image.exceptions.TileGeneralError" title="large_image.exceptions.TileGeneralError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileGeneralError</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSourceException">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">TileSourceException</span></span><a class="headerlink" href="#large_image.tilesource.TileSourceException" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="large_image.html#large_image.exceptions.TileSourceError" title="large_image.exceptions.TileSourceError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileSourceError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="large_image.tilesource.TileSourceFileNotFoundError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">TileSourceFileNotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/exceptions.html#TileSourceFileNotFoundError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.TileSourceFileNotFoundError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="large_image.html#large_image.exceptions.TileSourceError" title="large_image.exceptions.TileSourceError"><code class="xref py py-class docutils literal notranslate"><span class="pre">large_image.exceptions.TileSourceError</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">FileNotFoundError</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.canRead">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">canRead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource.html#canRead"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.canRead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if large_image can read a path or uri.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if any appropriate source reports it can read the path or
+uri.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.dictToEtree">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">dictToEtree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/utilities.html#dictToEtree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.dictToEtree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a dictionary in the style produced by etreeToDict back to an etree.
+Make an xml string via xml.etree.ElementTree.tostring(dictToEtree(
+dictionary), encoding=’utf8’, method=’xml’).  Note that this function and
+etreeToDict are not perfect conversions; numerical values are quoted in
+xml.  Plain key-value pairs are ambiguous whether they should be attributes
+or text values.  Text fields are collected together.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>d</strong> – a dictionary.</p>
+</dd>
+<dt class="field-even">Prarm root</dt>
+<dd class="field-even"><p>the root node to attach this dictionary to.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an etree.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.etreeToDict">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">etreeToDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/utilities.html#etreeToDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.etreeToDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an xml etree to a nested dictionary without schema names in the
+keys.  If you have an xml string, this can be converted to a dictionary via
+xml.etree.etreeToDict(ElementTree.fromstring(xml_string)).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>t</strong> – an etree.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a python dictionary with the results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.getSourceNameFromDict">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">getSourceNameFromDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">availableSources</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pathOrUri</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource.html#getSourceNameFromDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.getSourceNameFromDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a tile source based on a ordered dictionary of known sources and a path
+name or URI.  Additional parameters are passed to the tile source and can
+be used for properties such as encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>availableSources</strong> – an ordered dictionary of sources to try.</p></li>
+<li><p><strong>pathOrUri</strong> – either a file path or a fixed source via
+large_image://&lt;source&gt;.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the name of a tile source that can read the input, or None if
+there is no such source.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.getTileSource">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">getTileSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource.html#getTileSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.getTileSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a tilesource using the known sources.  If tile sources have not yet
+been loaded, load them.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A tilesource for the passed arguments.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="large_image.tilesource.nearPowerOfTwo">
+<span class="sig-prename descclassname"><span class="pre">large_image.tilesource.</span></span><span class="sig-name descname"><span class="pre">nearPowerOfTwo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/large_image/tilesource/utilities.html#nearPowerOfTwo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#large_image.tilesource.nearPowerOfTwo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if two values are different by nearly a power of two.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val1</strong> – the first value to check.</p></li>
+<li><p><strong>val2</strong> – the second value to check.</p></li>
+<li><p><strong>tolerance</strong> – the maximum difference in the log2 ratio’s mantissa.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if the valeus are nearly a power of two different from each
+other; false otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="large_image.cache_util.html" class="btn btn-neutral float-left" title="large_image.cache_util package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../large_image_source_bioformats/modules.html" class="btn btn-neutral float-right" title="large_image_source_bioformats" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
