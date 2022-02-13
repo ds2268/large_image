@@ -652,7 +652,7 @@ var GeojsImageViewerWidgetExtension = function (viewer) {
          */
         drawRegion: function (model) {
             model = model || new Backbone.Model();
-            return this.startDrawMode('rectangle', {trigger: false}).then((elements) => {
+            return this.startDrawMode('polygon', {trigger: false}).then((elements) => {
                 /*
                  * Strictly speaking, the rectangle drawn here could be rotated, but
                  * for simplicity we will set the region model assuming it is not.
