@@ -661,15 +661,8 @@ var GeojsImageViewerWidgetExtension = function (viewer) {
                  * a draw parameter to geojs that draws a rectangle aligned with
                  * the image coordinates.
                  */
-                var element = elements[0];
-                var width = Math.round(element.width);
-                var height = Math.round(element.height);
-                var left = Math.round(element.center[0] - element.width / 2);
-                var top = Math.round(element.center[1] - element.height / 2);
 
-                model.set('value', [
-                    left, top, width, height
-                ], {trigger: true});
+                model.set('value', elements[0].points, {trigger: true});
 
                 return model.get('value');
             });
